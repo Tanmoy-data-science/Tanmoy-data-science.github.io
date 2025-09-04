@@ -1,0 +1,17 @@
+project:
+  type: website
+
+website:
+  title: "Tanmoy Biswas"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: "CV"
+        href: cv/Tanmoy_Biswas_CV.pdf
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
