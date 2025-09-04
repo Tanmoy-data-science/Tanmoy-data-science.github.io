@@ -23,3 +23,6 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+website:
+  title: "Tanmoy Biswas"
+  favicon: assets/favicon.png
