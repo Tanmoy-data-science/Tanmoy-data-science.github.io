@@ -1,0 +1,12 @@
+---
+title: "CV"
+page-layout: full
+---
+
+::: cv-actions
+<a class="btn btn-primary" href="Tanmoy_Biswas_CV.pdf" download>Download PDF</a> <a class="btn btn-outline-secondary" href="Tanmoy_Biswas_CV.pdf" target="_blank">Open in new tab</a>
+:::
+
+<iframe src="Tanmoy_Biswas_CV.pdf" width="100%" height="900" style="border:1px solid #ddd; border-radius:8px;">
+
+</iframe>
