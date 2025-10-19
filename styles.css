@@ -1,3 +1,29 @@
+/* --- Fonts: Roboto family --- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;600;900&display=swap");
+
+/* Use Roboto across the site */
+:root{
+  --bs-font-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* keep your accent/background if you already set them */
+  /* example: 
+  --bs-primary: #cc4e5c;
+  --bs-body-bg: #fff5e6;
+  */
+}
+
+/* Typography weights per your preference */
+body        { font-weight: 300; }     /* Roboto Light-ish for body */
+strong, b   { font-weight: 600; }     /* Roboto Semibold for emphasis */
+h1          { font-weight: 200; }     /* Roboto ExtraLight for big page titles */
+h2, h3      { font-weight: 900; }     /* Roboto Black for smaller section heads */
+
+/* optional: a little breathing room */
+.main-container { padding-bottom: 3rem; }
+
+
+
+
+
 /* css styles */
 .cv-actions { margin-bottom: 1rem; }
 .cv-actions .btn { margin-right: .5rem; }

@@ -3,12 +3,18 @@ project:
 
 website:
   title: "Tanmoy Biswas"
+  favicon: assets/favicon.png
+  page-footer: "© 2025 Tanmoy Biswas"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: cv/
-        text: "CV"
+      - href: cv/index.qmd
+        text: "My Bio"
+      - href: blogs/index.qmd
+        text: "My Blogs"
+      - href: training/index.qmd
+        text: "My Trainings"
     right:
       - icon: github
         href: https://github.com/Tanmoy-data-science
@@ -20,14 +26,13 @@ website:
         aria-label: LinkedIn
         target: _blank
         rel: noopener
-  favicon: assets/favicon.png
-  page-footer: "© 2025 Tanmoy Biswas"
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+
 metadata:
   description: "Portfolio & coursework in data visualization and analytics."
   site-url: https://Tanmoy-data-science.github.io
