@@ -1,0 +1,12 @@
+/* css styles */
+.cv-actions { margin-bottom: 1rem; }
+.cv-actions .btn { margin-right: .5rem; }
+/* site-wide tweaks */
+:root{
+  --bs-primary: #cc4e5c;        /* accent color */
+  --bs-body-bg: #fff5e6;        /* page background (very light peach) */
+}
+
+/* title spacing */
+h1.title { letter-spacing: .3px; }
+

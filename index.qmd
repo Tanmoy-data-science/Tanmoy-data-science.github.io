@@ -1,0 +1,7 @@
+---
+title: "Tanmoy Biswas"
+subtitle: "Data Visualization & Analytics"
+title-block-banner: true
+toc: false
+---
+I’m a data visualization enthusiast who turns messy information into clean, compelling stories. I enjoy building clear charts, dashboards, and reproducible workflows with R, Quarto, and Git. This site will host class projects, notes, and experiments as I learn and share what works (and what doesn’t).

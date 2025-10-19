@@ -13,9 +13,13 @@ website:
       - icon: github
         href: https://github.com/Tanmoy-data-science
         aria-label: GitHub
+        target: _blank
+        rel: noopener
       - icon: linkedin
-        href: https://www.linkedin.com/in/YOUR-LINKEDIN/
+        href: https://www.linkedin.com/in/tanmoy-biswas7/
         aria-label: LinkedIn
+        target: _blank
+        rel: noopener
   favicon: assets/favicon.png
   page-footer: "© 2025 Tanmoy Biswas"
 
@@ -24,3 +28,9 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+metadata:
+  description: "Portfolio & coursework in data visualization and analytics."
+  site-url: https://Tanmoy-data-science.github.io
+  open-graph: true
+  twitter-card: true
+  image: images/og-image.png
