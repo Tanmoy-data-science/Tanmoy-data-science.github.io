@@ -1,0 +1,22 @@
+---
+title: "Knowledge Mining Assignments"
+---
+
+This page contains my submitted assignments for The University of Texas at Dallas’s EPPS 6323: Knowledge Mining class taught by Dr. Karl Ho.
+
+## Assignment 1
+
+- [Lab 01: R Programming Basics I](lab01/Lab01.html)
+- [Lab 02: R Programming Basics II](lab02/Lab02.html)
+
+## Assignment 2
+
+- [Prompt Exercise: Systematic Literature Review Using Multiple AI Models](assignment02/assignment02.html)
+
+## Assignment 3
+
+- [Machine Learning Exercise: Regression and TEDS2016](assignment03/assignment03.html)
+
+## Assignment 4
+
+- [Text Analytics Using quanteda](assignment04/assignment04.html)

@@ -1,0 +1,270 @@
+---
+title: "Assignment 2: Prompt Exercise"
+subtitle: "Systematic Literature Review Using ChatGPT and Claude"
+author: "Tanmoy Biswas"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+---
+
+## Overview
+
+This assignment examines how two AI models can support the development of a structured literature review on data mining and machine learning applications. I compared two models: ChatGPT and Claude. Although the assignment prompt listed ChatGPT, Copilot, and Grok as examples, Dr. Ho clarified in class that students could use any two AI models. I selected ChatGPT and Claude because both are widely used for academic writing, structured reasoning, and research-oriented drafting.
+
+The goal of this exercise was not only to generate a review, but also to evaluate how each model handled academic structure, synthesis, trends, research gaps, testable hypotheses, and references.
+
+## Step 1: Baseline Prompt
+
+The same baseline prompt was submitted to both ChatGPT and Claude:
+
+> Conduct a 2,000-word structured systematic literature review on the applications of data mining and machine learning in real-world domains.
+>
+> Please organize the review with the following sections:
+>
+> 1. Introduction  
+> 2. Review Methodology  
+>    - Search strategy  
+>    - Inclusion and exclusion criteria  
+>    - Scope of the literature  
+> 3. Major Application Domains  
+>    - Healthcare  
+>    - Finance  
+>    - Education  
+>    - Public policy or government  
+>    - Business and marketing  
+> 4. Synthesis of Key Findings  
+> 5. Emerging Trends  
+> 6. Research Gaps and Limitations  
+> 7. One Testable Hypothesis  
+> 8. Conclusion  
+> 9. References  
+>
+> Use an academic tone suitable for a graduate-level knowledge mining course. Focus on synthesis rather than only listing examples. Include real scholarly references where possible. Do not fabricate citations. If any citation is uncertain, clearly mark it as needing verification.
+
+## Step 2: Analysis of Initial Model Responses
+
+The two models produced similar overall structures, but they differed in tone, depth, and academic polish.
+
+| Evaluation Criterion | ChatGPT Response | Claude Response |
+|---|---|---|
+| Structure | ChatGPT followed the requested structure clearly. It included an introduction, methodology, application domains, synthesis, trends, gaps, hypothesis, conclusion, and references. | Claude also followed the requested structure, but used a more formal systematic-review style with clearer subsection organization. |
+| Methodology | ChatGPT described a structured review approach and referenced PRISMA-style reporting. However, the methodology read more like a simplified review design than a full systematic review. | Claude provided a more detailed methodology, including databases, keyword families, inclusion criteria, exclusion criteria, and scope limitations. |
+| Synthesis | ChatGPT synthesized across domains clearly and used accessible language to explain common patterns such as prediction, data quality, fairness, and interpretability. | Claude provided stronger cross-domain synthesis, especially around data standardization, algorithmic bias, regulatory oversight, and power asymmetry. |
+| Trends and Gaps | ChatGPT identified useful trends such as explainable AI, human-in-the-loop systems, responsible AI governance, and unstructured data. | Claude identified similar trends but framed them more academically, including federated learning, large language models, causal machine learning, and algorithmic auditing. |
+| Hypothesis | ChatGPT proposed a relevant and testable hypothesis comparing interpretable human-in-the-loop models with black-box accuracy-focused models. | Claude proposed a more specific hypothesis connecting regulatory oversight and data standards with lower demographic disparity. |
+| References | ChatGPT included many references and links, but some links appeared web-generated and would need cleaning before formal submission. | Claude provided cleaner APA-style references with DOIs for several sources, but some citations were still marked as needing verification. |
+| Overall Assessment | ChatGPT was clearer and more practical, but less polished as a formal literature review. | Claude was more academically polished and better suited as the foundation for the final synthesized review. |
+
+### Summary of ChatGPT Response
+
+ChatGPT’s response was useful because it explained the topic in clear and accessible language. It framed data mining and machine learning as socio-technical systems, not just technical tools. This was one of its strongest contributions. It also emphasized that model performance alone is not enough; real-world usefulness depends on interpretation, fairness, institutional context, and accountability.
+
+However, ChatGPT’s response was less formal than Claude’s. Some of the wording was conversational, and some references included links that would need to be cleaned or verified before a final academic submission. The response was strong for understanding the topic, but it needed refinement to sound more like a graduate-level literature review.
+
+### Summary of Claude Response
+
+Claude’s response was more polished and academic. It gave a stronger explanation of why machine learning applications are more mature in some domains, such as healthcare and finance, than in others, such as education and public policy. Claude also provided stronger cross-domain synthesis, especially around data standardization, algorithmic bias, regulatory oversight, and power asymmetry.
+
+The main weakness of Claude’s response was that some citations were still marked as needing verification. Also, the writing sometimes sounded very confident, so the claims needed to be reviewed carefully to avoid overstatement.
+
+## Step 3: Refined Prompts
+
+After reviewing the initial responses, I created refined prompts for each model.
+
+### Refined Prompt for ChatGPT
+
+> Revise the previous systematic literature review on data mining and machine learning applications to make it more academically rigorous and less conversational.
+>
+> Please improve the response in the following ways:
+>
+> 1. Strengthen the methodology section by clearly distinguishing this as a structured review rather than a full PRISMA systematic review.
+> 2. Improve cross-domain synthesis instead of only describing each domain separately.
+> 3. Use more precise academic language.
+> 4. Keep the five domains: healthcare, finance, education, public policy/government, and business/marketing.
+> 5. Strengthen the research gaps section by focusing on implementation evidence, fairness auditing, external validity, and longitudinal evaluation.
+> 6. Keep one testable hypothesis, but make it more specific and measurable.
+> 7. Remove casual phrases and unsupported claims.
+> 8. Include only references that are likely to be real and verifiable. If uncertain, mark the reference as needing verification.
+
+### Refined Prompt for Claude
+
+> Revise the previous systematic literature review on data mining and machine learning applications with greater attention to source verification, methodological caution, and concise academic writing.
+>
+> Please improve the response in the following ways:
+>
+> 1. Clearly state that the review follows a structured review style but is not a full PRISMA-compliant systematic review.
+> 2. Keep the academic tone but reduce overstatement.
+> 3. Strengthen the comparison between domains by explaining why healthcare and finance appear more mature than education and public policy.
+> 4. Keep the discussion of algorithmic bias, interpretability, fairness auditing, and regulatory oversight.
+> 5. Remove or replace citations that are uncertain unless they are clearly marked as needing verification.
+> 6. Make the testable hypothesis practical enough for a graduate-level empirical research design.
+> 7. Provide a concise final review suitable for a course assignment.
+
+## Step 4: Final Synthesized Systematic Literature Review
+
+### Introduction
+
+Data mining and machine learning have become major tools for extracting useful patterns from large and complex datasets. In the knowledge discovery tradition, data mining refers to the process of identifying valid, novel, useful, and understandable patterns in data. Machine learning extends this process by using algorithms that can learn predictive or classificatory patterns from data. Together, these methods are now used in healthcare, finance, education, public policy, government administration, business, and marketing.
+
+The main value of data mining and machine learning is not simply that they can process large datasets quickly. Their real value comes from their ability to support prediction, classification, clustering, anomaly detection, recommendation, and decision support. However, the literature also shows that machine learning is not automatically beneficial. The quality of the data, the fairness of the model, the interpretability of the results, and the institutional setting all influence whether these tools produce useful or harmful outcomes.
+
+This review synthesizes major applications of data mining and machine learning across five domains: healthcare, finance, education, public policy/government, and business/marketing. The review focuses on cross-domain patterns rather than only listing examples from each field.
+
+### Methodology
+
+This review follows a structured literature review style, but it is not a full PRISMA-compliant systematic review. The purpose was to identify major themes, applications, trends, and gaps in the literature on data mining and machine learning applications.
+
+The review focused on peer-reviewed and widely cited literature related to machine learning, data mining, predictive modeling, classification, clustering, recommendation systems, fraud detection, educational data mining, public-sector algorithms, and healthcare analytics. The main domains were selected because they represent common real-world settings where data mining and machine learning are used for decision-making.
+
+The inclusion criteria focused on studies and reviews that discussed real-world applications, methodological issues, ethical challenges, or cross-domain implications. Purely technical studies without real-world application context were less central to the review. The review also prioritized sources that helped explain broader issues such as bias, interpretability, fairness, accountability, and implementation.
+
+### Healthcare
+
+Healthcare is one of the most important domains for machine learning because decisions can directly affect patient well-being. Applications include disease prediction, medical imaging, hospital readmission prediction, patient risk scoring, personalized medicine, drug discovery, and public-health surveillance.
+
+Machine learning has shown strong performance in medical imaging and clinical prediction. For example, deep learning models have been used to classify skin cancer images and detect pneumonia from chest X-rays. Healthcare data are often rich and complex, including electronic health records, clinical notes, laboratory results, medical images, and insurance claims. These data sources make healthcare a promising domain for predictive modeling.
+
+However, healthcare also illustrates the risks of algorithmic bias. A model can be accurate in a technical sense while still producing unfair outcomes if the target variable reflects structural inequality. For example, if healthcare cost is used as a proxy for medical need, the model may underestimate the needs of groups that historically had less access to care. This shows that model design requires careful thinking about what the outcome variable actually measures.
+
+Healthcare also has stronger regulatory and validation expectations than many other domains. Because errors can have serious consequences, models often require clinical validation, transparency, and post-deployment monitoring. This makes healthcare a relatively mature domain for machine learning, but also one where implementation is slower and more cautious.
+
+### Finance
+
+Finance has a long history of quantitative modeling, so machine learning fits naturally into many financial tasks. Common applications include credit scoring, fraud detection, anti-money-laundering monitoring, algorithmic trading, insurance underwriting, customer segmentation, and risk management.
+
+Fraud detection is one of the strongest use cases. Financial institutions process massive numbers of transactions, and fraudulent cases are rare compared with legitimate transactions. This creates a class imbalance problem, where ordinary accuracy is not enough. Metrics such as precision, recall, F1-score, and cost-sensitive evaluation are more useful because the cost of missing fraud can be high.
+
+Credit scoring is another major application, but it raises fairness and interpretability concerns. If historical lending data reflect unequal access to credit, machine learning models may reproduce those inequalities. Financial institutions also face regulatory pressure to explain credit decisions. This creates a tension between using complex models for predictive accuracy and using interpretable models for accountability.
+
+Overall, finance is a mature domain because it has structured data, clear business objectives, and strong incentives for prediction. At the same time, it requires careful governance because financial decisions can affect access to loans, insurance, and economic opportunity.
+
+### Education
+
+Educational data mining and learning analytics use data from schools, universities, online platforms, and learning management systems. Applications include student performance prediction, dropout risk modeling, learner behavior clustering, adaptive learning, recommendation systems, and analysis of discussion posts or written assignments.
+
+The main promise of machine learning in education is early intervention. If a model can identify students at risk of failing or withdrawing, institutions may be able to provide tutoring, advising, or other support before the student falls too far behind. Learning management systems also generate detailed behavioral data, such as login frequency, assignment submission timing, quiz performance, and participation patterns.
+
+However, education is more difficult than finance or healthcare because the target outcome is often contested. Grades, GPA, and course completion are commonly used as indicators of learning, but they are imperfect proxies. They may reflect socioeconomic background, prior preparation, language barriers, or institutional grading practices rather than learning alone.
+
+There is also a risk that predictive models may label students in harmful ways. If a student is classified as “high risk” but the institution does not provide meaningful support, the model may stigmatize rather than help. For this reason, educational machine learning should be connected to ethical intervention, not just prediction.
+
+### Public Policy and Government
+
+Machine learning in public policy and government includes predictive policing, child welfare screening, tax compliance, benefits fraud detection, public health surveillance, disaster response, transportation planning, and analysis of public comments or administrative documents.
+
+This is one of the most ethically sensitive domains because government decisions can directly affect rights, benefits, policing, family life, and access to public services. A private recommendation system may influence what someone buys, but a government algorithm may influence whether someone is investigated, denied benefits, or classified as risky.
+
+The major challenge in government machine learning is that the data often come from institutional processes that may already be biased. For example, crime data may reflect policing patterns rather than actual crime patterns. If a predictive policing model is trained on arrest data, it may send more police to areas that were already heavily policed, creating a feedback loop.
+
+Government applications also raise concerns about transparency and contestability. People affected by algorithmic decisions may not know that an algorithm was used, may not understand how the decision was made, and may not have a clear way to appeal. Therefore, public-sector machine learning requires stronger accountability mechanisms than many private-sector applications.
+
+### Business and Marketing
+
+Business and marketing were early adopters of data mining because firms collect large amounts of customer and transaction data. Applications include customer segmentation, churn prediction, recommendation systems, market-basket analysis, dynamic pricing, sentiment analysis, targeted advertising, and customer relationship management.
+
+The strongest business use case is personalization. Companies use machine learning to recommend products, predict customer preferences, identify customers likely to leave, and tailor promotions. Recommendation systems used by companies such as Amazon, Netflix, and Spotify are well-known examples of machine learning in commercial settings.
+
+However, marketing analytics also raises concerns about privacy and manipulation. Firms can infer sensitive characteristics from customer behavior, even when customers did not directly provide that information. A model that predicts what a customer wants can also be used to exploit behavioral vulnerabilities. This means the ethical issue is not only whether the prediction is accurate, but how the prediction is used.
+
+Compared with healthcare and finance, business and marketing often face fewer regulatory constraints. This allows faster deployment, but it also means there may be less independent auditing and accountability.
+
+### Cross-Domain Synthesis
+
+Across the five domains, several patterns appear.
+
+First, machine learning applications are more mature where data are abundant, standardized, and continuously generated. Finance and marketing benefit from structured transaction data. Healthcare benefits from electronic health records and medical imaging, although privacy and regulation create additional complexity. Education and government often have more fragmented and context-dependent data.
+
+Second, prediction dominates most applications. Across domains, organizations use machine learning to predict risk, identify anomalies, classify cases, recommend actions, and prioritize interventions. However, prediction alone is not enough. A model must be connected to a meaningful action. Otherwise, prediction becomes an academic exercise rather than a useful decision-support tool.
+
+Third, fairness and bias are recurring problems. Machine learning models learn from historical data, and historical data often reflect unequal social conditions. This means that bias is not limited to one domain. It appears in healthcare, finance, education, public policy, and marketing.
+
+Fourth, interpretability becomes more important when decisions are high-stakes. In domains such as healthcare, finance, and government, affected individuals need explanations and appeal mechanisms. Black-box models may be powerful, but they can be difficult to justify when they influence major life outcomes.
+
+Fifth, many studies still focus more on model performance than real-world impact. High accuracy, AUC, or F1-score does not prove that a model improves decisions after deployment. More longitudinal evaluation is needed to study whether machine learning systems actually improve outcomes over time.
+
+### Emerging Trends
+
+Several trends are shaping the future of data mining and machine learning applications.
+
+One major trend is explainable and interpretable machine learning. As models are used in high-stakes domains, users and regulators increasingly demand explanations. In some cases, simpler interpretable models may be preferable to complex black-box models.
+
+A second trend is human-in-the-loop machine learning. Rather than fully automating decisions, many organizations use machine learning to support human judgment. This is especially important in medicine, fraud investigation, education advising, and public administration.
+
+A third trend is responsible AI governance. Organizations are beginning to pay more attention to fairness audits, model documentation, data provenance, privacy, and monitoring for model drift.
+
+A fourth trend is the use of unstructured data. Text, images, audio, social media, clinical notes, and administrative records are increasingly analyzed with machine learning. This expands the power of data mining but also creates new privacy and consent concerns.
+
+A fifth trend is causal machine learning. Traditional machine learning is strong at prediction, but many real-world decisions require understanding the likely effect of an intervention. Causal methods are therefore becoming more important in healthcare, education, and public policy.
+
+### Research Gaps and Limitations
+
+The first major research gap is implementation evidence. Many studies show that a model can predict an outcome, but fewer show that the model improves decisions or outcomes after deployment.
+
+The second gap is fairness auditing. Many studies mention bias, but fewer conduct detailed subgroup analysis or fairness testing. This is a serious limitation in high-stakes domains.
+
+The third gap is external validity. Models trained in one institution, country, or time period may not generalize to another. This is especially important in healthcare and education, where populations and practices vary.
+
+The fourth gap is interpretability. Some studies use complex models and then add explanation tools, but they do not always test whether those explanations are useful to real decision-makers.
+
+The fifth gap is privacy. Healthcare, education, finance, and government all involve sensitive data. However, many studies treat data availability as a technical issue rather than an ethical and governance issue.
+
+### Testable Hypothesis
+
+Based on this review, the following hypothesis is proposed:
+
+**H1: In high-stakes domains, machine learning systems that combine interpretable models with structured human review will produce lower subgroup error disparities and higher user trust than black-box models optimized only for predictive accuracy.**
+
+This hypothesis could be tested in domains such as student-risk prediction, fraud detection, or clinical triage. Researchers could compare two deployment conditions: one using a black-box model and one using an interpretable model with human review. Outcomes could include predictive performance, subgroup error rates, decision consistency, user trust, intervention uptake, and downstream outcome improvement.
+
+### Conclusion
+
+Data mining and machine learning have become powerful tools for extracting patterns from large and complex datasets. They support prediction, classification, clustering, anomaly detection, recommendation, and decision-making across healthcare, finance, education, government, and business.
+
+However, the main lesson from the literature is that machine learning is not automatically beneficial. Its value depends on the quality of the data, the design of the model, the fairness of the outcome, the interpretability of the results, and the accountability of the institution using it. The strongest applications are not simply those with the highest accuracy, but those that connect prediction to responsible action.
+
+The future of applied machine learning should therefore focus not only on better algorithms, but also on better governance, fairness auditing, longitudinal evaluation, and human-centered implementation.
+
+## Step 5: Reflection
+
+### How did each model approach the systematic review differently?
+
+ChatGPT approached the review in a clearer and more explanatory way. Its response was easier to read and was useful for understanding the major issues in simple language. It emphasized that machine learning should be understood as part of a socio-technical system, which was helpful for framing the topic.
+
+Claude approached the review in a more formal academic style. Its response sounded more like a graduate-level literature review. It gave stronger cross-domain synthesis and explained the role of data standardization, regulatory oversight, algorithmic bias, and power asymmetry more effectively.
+
+Overall, ChatGPT was stronger for clarity and practical explanation, while Claude was stronger for academic tone and synthesis.
+
+### Which prompt refinements yielded the best results?
+
+The most useful refinements were the instructions to improve cross-domain synthesis, avoid simple domain-by-domain description, reduce overstatement, and distinguish a structured review from a full PRISMA-compliant systematic review. These refinements improved the academic precision of the output.
+
+For ChatGPT, the most useful refinement was asking it to become less conversational and more academically rigorous. For Claude, the most useful refinement was asking it to reduce overstatement and pay closer attention to citation verification.
+
+### What did I learn about using AI for structured academic reviews?
+
+This exercise showed me that AI can be very useful for organizing a literature review, identifying themes, drafting comparisons, and developing hypotheses. However, it also showed that AI outputs must be checked carefully. A well-written response can still include uncertain citations, overconfident claims, or simplified methodology.
+
+I learned that AI works best when it is used as a drafting and thinking partner rather than as a final authority. The student still has to judge the quality of the structure, verify sources, refine the argument, and make sure the final submission is accurate and appropriate for the assignment.
+
+## References
+
+Adomavicius, G., & Tuzhilin, A. (2005). Toward the next generation of recommender systems: A survey of the state-of-the-art and possible extensions. *IEEE Transactions on Knowledge and Data Engineering, 17*(6), 734–749.
+
+Breiman, L. (2001). Random forests. *Machine Learning, 45*(1), 5–32.
+
+Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*.
+
+Fayyad, U., Piatetsky-Shapiro, G., & Smyth, P. (1996). From data mining to knowledge discovery in databases. *AI Magazine, 17*(3), 37–54.
+
+LeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. *Nature, 521*(7553), 436–444.
+
+Lum, K., & Isaac, W. (2016). To predict and serve? *Significance, 13*(5), 14–19.
+
+Ngai, E. W. T., Xiu, L., & Chau, D. C. K. (2009). Application of data mining techniques in customer relationship management: A literature review and classification. *Expert Systems with Applications, 36*(2), 2592–2602.
+
+Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. *Science, 366*(6464), 447–453.
+
+Page, M. J., McKenzie, J. E., Bossuyt, P. M., et al. (2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. *BMJ, 372*, n71.
+
+Rudin, C. (2019). Stop explaining black box machine learning models for high-stakes decisions and use interpretable models instead. *Nature Machine Intelligence, 1*, 206–215.

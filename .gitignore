@@ -7,3 +7,5 @@
 _site/
 .Rhistory
 .Rproj.user/
+_freeze/
+*.zip

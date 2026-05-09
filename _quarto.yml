@@ -1,6 +1,17 @@
 project:
   type: website
+  render:
+    - index.qmd
+    - about.qmd
+    - cv/index.qmd
+    - assignments/knowledge-mining/index.qmd
+    - assignments/knowledge-mining/assignment02/assignment02.qmd
+    - assignments/knowledge-mining/assignment03/assignment03.qmd
+    - assignments/knowledge-mining/assignment04/assignment04.qmd
 
+execute:
+  freeze: auto
+  
 website:
   title: "Tanmoy Biswas"
   favicon: assets/favicon.png
@@ -11,10 +22,8 @@ website:
         text: Home
       - href: cv/index.qmd
         text: "My Bio"
-      - href: blogs/index.qmd
-        text: "My Blogs"
-      - href: training/index.qmd
-        text: "My Trainings"
+      - href: assignments/knowledge-mining/index.qmd
+        text: "Assignments"
     right:
       - icon: github
         href: https://github.com/Tanmoy-data-science
@@ -38,4 +47,4 @@ metadata:
   site-url: https://Tanmoy-data-science.github.io
   open-graph: true
   twitter-card: true
-  image: images/og-image.png
+  image: assets/headshot.jpg

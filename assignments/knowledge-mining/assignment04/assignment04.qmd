@@ -1,0 +1,233 @@
+---
+title: "Assignment 4: Text Analytics Using quanteda"
+subtitle: "Inaugural Speeches, DOD Reports, Wordfish, and APSA eJobs"
+author: "Tanmoy Biswas"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+execute:
+  warning: false
+  message: false
+---
+
+## Overview
+
+This assignment applies text analytics using the `quanteda` package. The assignment focuses on four related tasks: analyzing U.S. presidential inaugural speeches, analyzing U.S. Department of Defense reports, understanding and applying Wordfish, and extending text analytics to APSA eJobs documents.
+
+The main purpose of the assignment is to understand how text can be converted into analyzable data through corpus construction, tokenization, document-feature matrices, word frequency analysis, and scaling methods such as Wordfish.
+
+## Required Packages
+
+The following packages are commonly used for this type of text analytics workflow.
+
+```{r, eval=FALSE}
+library(quanteda)
+library(quanteda.textmodels)
+library(quanteda.textplots)
+library(readtext)
+library(ggplot2)
+```
+
+## Part 1: U.S. Presidential Inaugural Speeches
+
+The first part of the assignment uses U.S. presidential inaugural speeches. These speeches are useful for text analytics because they are organized by president and year, allowing comparison over time.
+
+```{r, eval=FALSE}
+data(data_corpus_inaugural, package = "quanteda")
+
+inaug_corpus <- data_corpus_inaugural
+summary(inaug_corpus)
+```
+
+## Creating Tokens and a Document-Feature Matrix
+
+A document-feature matrix converts text into a structured matrix where rows represent documents and columns represent words or features.
+
+```{r, eval=FALSE}
+inaug_tokens <- tokens(
+  inaug_corpus,
+  remove_punct = TRUE,
+  remove_numbers = TRUE,
+  remove_symbols = TRUE
+)
+
+inaug_tokens <- tokens_remove(inaug_tokens, stopwords("english"))
+
+inaug_dfm <- dfm(inaug_tokens)
+
+inaug_dfm
+```
+
+## Most Frequent Words
+
+```{r, eval=FALSE}
+topfeatures(inaug_dfm, 30)
+```
+
+## Similarities and Differences Over Time
+
+U.S. presidential inaugural speeches share several similarities. Most presidents use language related to unity, government, freedom, people, nation, duty, and democracy. These words reflect the ceremonial and national character of inaugural speeches.
+
+However, there are also differences over time. Earlier speeches often emphasized constitutional government, union, and national formation. Later speeches increasingly reflect modern policy concerns, global leadership, economic challenges, war, civil rights, and democratic values. The language of inaugural speeches therefore changes as the political context changes.
+
+Text analytics makes it possible to compare these changes systematically by examining word frequencies, document-feature matrices, and scaling methods.
+
+## Part 2: U.S. Department of Defense Reports
+
+The second part of the assignment uses U.S. Department of Defense reports provided in the Teams Labs folder as `USDOD.zip`. Because these files are large PDF documents, they should not be committed directly to the GitHub website repository. Instead, they can be stored locally and analyzed in R.
+
+A typical workflow would begin by reading the PDF files into R.
+
+```{r, eval=FALSE}
+dod_texts <- readtext("USDOD/*.pdf")
+
+dod_corpus <- corpus(dod_texts)
+
+summary(dod_corpus)
+```
+
+## DOD Document-Feature Matrix
+
+```{r, eval=FALSE}
+dod_tokens <- tokens(
+  dod_corpus,
+  remove_punct = TRUE,
+  remove_numbers = TRUE,
+  remove_symbols = TRUE
+)
+
+dod_tokens <- tokens_remove(dod_tokens, stopwords("english"))
+
+dod_dfm <- dfm(dod_tokens)
+
+dod_dfm
+```
+
+## DOD Word Frequency
+
+```{r, eval=FALSE}
+topfeatures(dod_dfm, 40)
+```
+
+## Interpretation of DOD Text Analytics
+
+The DOD reports are likely to contain recurring terms related to security, military capability, China, defense, strategy, technology, regional threats, modernization, and national interests. A frequency-based analysis can show which terms dominate the documents, while comparison over time can show whether the language of threat, cooperation, modernization, or regional strategy changes across reports.
+
+This type of analysis is useful because government reports are long and difficult to compare manually. Text analytics helps summarize broad patterns across many documents.
+
+## Part 3: What Is Wordfish?
+
+Wordfish is a text-scaling method used to estimate the positions of documents based on word usage. It is often used in political text analysis when researchers want to compare documents, parties, speeches, or institutions along a latent dimension.
+
+In simple terms, Wordfish assumes that documents using similar patterns of words are closer together, while documents using different patterns of words are farther apart. The method estimates document positions from word frequencies without requiring the researcher to manually code every document.
+
+In political analysis, Wordfish can be used to compare ideological or policy positions across speeches, manifestos, reports, or other political texts.
+
+## Running Wordfish on DOD Reports
+
+```{r, eval=FALSE}
+dod_wordfish <- textmodel_wordfish(dod_dfm)
+
+summary(dod_wordfish)
+```
+
+## Plotting Wordfish Positions
+
+```{r, eval=FALSE}
+textplot_scale1d(dod_wordfish)
+```
+
+## Interpreting Wordfish Results
+
+For the DOD reports, Wordfish can be used to compare whether reports from different years occupy different positions in the estimated textual space. If later reports use more language related to military modernization, competition, technology, or strategic rivalry, Wordfish may place those documents differently from earlier reports.
+
+The results should be interpreted carefully. Wordfish estimates relative textual positions, not direct causal explanations. A document's position depends on word-use patterns, preprocessing choices, and the set of documents included in the analysis.
+
+## Part 4: Comparing Positions
+
+Positions can be compared by examining the Wordfish document scores. Documents with similar scores are textually similar along the estimated dimension. Documents with very different scores are more distinct in their word-use patterns.
+
+```{r, eval=FALSE}
+dod_positions <- data.frame(
+  document = docnames(dod_dfm),
+  theta = dod_wordfish$theta
+)
+
+dod_positions
+```
+
+```{r, eval=FALSE}
+ggplot(dod_positions, aes(x = reorder(document, theta), y = theta)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Wordfish Estimated Positions of DOD Reports",
+    x = "Document",
+    y = "Estimated Wordfish Position"
+  )
+```
+
+## Part 5: APSA eJobs Hackathon
+
+The final part of the assignment asks for a corpus using the APSA eJobs website or the Teams Hackathon folder. Because APSA access may require membership, the Teams-provided PDF files can be used instead.
+
+A possible workflow is:
+
+```{r, eval=FALSE}
+psjobs_texts <- readtext("PSJobs201606_202603/*.pdf")
+
+psjobs_corpus <- corpus(psjobs_texts)
+
+summary(psjobs_corpus)
+```
+
+## APSA eJobs Tokens and DFM
+
+```{r, eval=FALSE}
+psjobs_tokens <- tokens(
+  psjobs_corpus,
+  remove_punct = TRUE,
+  remove_numbers = TRUE,
+  remove_symbols = TRUE
+)
+
+psjobs_tokens <- tokens_remove(psjobs_tokens, stopwords("english"))
+
+psjobs_dfm <- dfm(psjobs_tokens)
+
+psjobs_dfm
+```
+
+## APSA eJobs Word Frequency
+
+```{r, eval=FALSE}
+topfeatures(psjobs_dfm, 40)
+```
+
+## Possible APSA eJobs Analysis
+
+Using `quanteda`, APSA eJobs postings can be analyzed to identify common skill requirements, methodological language, and topic areas in political science job advertisements.
+
+Possible research questions include:
+
+1. How often do job ads mention quantitative, qualitative, computational, or mixed-methods skills?
+2. Do postings increasingly mention data science, machine learning, Python, R, or text analysis over time?
+3. Which subfields appear most frequently in the job ads?
+4. Are there changes in the language of teaching, research, diversity, or public policy across time?
+
+This type of analysis is useful because job ads reveal how academic labor-market expectations change over time.
+
+## Reflection
+
+This assignment shows how text analytics can transform large collections of documents into structured data. The main steps are corpus creation, tokenization, cleaning, document-feature matrix construction, frequency analysis, and scaling.
+
+The U.S. inaugural speeches are useful for comparing political language over time. The DOD reports are useful for studying changes in national security language and strategic framing. Wordfish provides a way to compare document positions based on word-use patterns. The APSA eJobs documents can be used to study academic labor-market trends and skill demands.
+
+The main limitation is that text analytics depends heavily on preprocessing choices. Removing stopwords, selecting documents, stemming words, and deciding whether to include rare terms can all affect the results. Therefore, text analytics should be treated as a systematic research tool, not as an automatic answer machine.
+
+## Conclusion
+
+Text analytics using `quanteda` provides a practical way to analyze large collections of political and institutional texts. Frequency analysis helps identify dominant terms, while scaling methods such as Wordfish help compare document positions. These methods are especially useful when the number of documents is too large for manual reading alone.
+
+For this assignment, the main lesson is that text data must be carefully prepared before analysis. Corpus construction, tokenization, cleaning, and interpretation all matter. Wordfish and other scaling methods can reveal meaningful differences across documents, but the results should always be interpreted in relation to the documents, the research question, and the preprocessing decisions.
