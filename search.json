@@ -1,10 +1,227 @@
 [
   {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "",
+    "text": "This assignment applies text analytics using the quanteda package. The assignment focuses on four related tasks: analyzing U.S. presidential inaugural speeches, analyzing U.S. Department of Defense reports, understanding and applying Wordfish, and extending text analytics to APSA eJobs documents.\nThe main purpose of the assignment is to understand how text can be converted into analyzable data through corpus construction, tokenization, document-feature matrices, word frequency analysis, and scaling methods such as Wordfish."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#overview",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#overview",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "",
+    "text": "This assignment applies text analytics using the quanteda package. The assignment focuses on four related tasks: analyzing U.S. presidential inaugural speeches, analyzing U.S. Department of Defense reports, understanding and applying Wordfish, and extending text analytics to APSA eJobs documents.\nThe main purpose of the assignment is to understand how text can be converted into analyzable data through corpus construction, tokenization, document-feature matrices, word frequency analysis, and scaling methods such as Wordfish."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#required-packages",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#required-packages",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Required Packages",
+    "text": "Required Packages\nThe following packages are commonly used for this type of text analytics workflow.\n\nlibrary(quanteda)\nlibrary(quanteda.textmodels)\nlibrary(quanteda.textplots)\nlibrary(readtext)\nlibrary(ggplot2)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#part-1-u.s.-presidential-inaugural-speeches",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#part-1-u.s.-presidential-inaugural-speeches",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Part 1: U.S. Presidential Inaugural Speeches",
+    "text": "Part 1: U.S. Presidential Inaugural Speeches\nThe first part of the assignment uses U.S. presidential inaugural speeches. These speeches are useful for text analytics because they are organized by president and year, allowing comparison over time.\n\ndata(data_corpus_inaugural, package = \"quanteda\")\n\ninaug_corpus &lt;- data_corpus_inaugural\nsummary(inaug_corpus)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#creating-tokens-and-a-document-feature-matrix",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#creating-tokens-and-a-document-feature-matrix",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Creating Tokens and a Document-Feature Matrix",
+    "text": "Creating Tokens and a Document-Feature Matrix\nA document-feature matrix converts text into a structured matrix where rows represent documents and columns represent words or features.\n\ninaug_tokens &lt;- tokens(\n  inaug_corpus,\n  remove_punct = TRUE,\n  remove_numbers = TRUE,\n  remove_symbols = TRUE\n)\n\ninaug_tokens &lt;- tokens_remove(inaug_tokens, stopwords(\"english\"))\n\ninaug_dfm &lt;- dfm(inaug_tokens)\n\ninaug_dfm"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#most-frequent-words",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#most-frequent-words",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Most Frequent Words",
+    "text": "Most Frequent Words\n\ntopfeatures(inaug_dfm, 30)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#similarities-and-differences-over-time",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#similarities-and-differences-over-time",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Similarities and Differences Over Time",
+    "text": "Similarities and Differences Over Time\nU.S. presidential inaugural speeches share several similarities. Most presidents use language related to unity, government, freedom, people, nation, duty, and democracy. These words reflect the ceremonial and national character of inaugural speeches.\nHowever, there are also differences over time. Earlier speeches often emphasized constitutional government, union, and national formation. Later speeches increasingly reflect modern policy concerns, global leadership, economic challenges, war, civil rights, and democratic values. The language of inaugural speeches therefore changes as the political context changes.\nText analytics makes it possible to compare these changes systematically by examining word frequencies, document-feature matrices, and scaling methods."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#part-2-u.s.-department-of-defense-reports",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#part-2-u.s.-department-of-defense-reports",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Part 2: U.S. Department of Defense Reports",
+    "text": "Part 2: U.S. Department of Defense Reports\nThe second part of the assignment uses U.S. Department of Defense reports provided in the Teams Labs folder as USDOD.zip. Because these files are large PDF documents, they should not be committed directly to the GitHub website repository. Instead, they can be stored locally and analyzed in R.\nA typical workflow would begin by reading the PDF files into R.\n\ndod_texts &lt;- readtext(\"USDOD/*.pdf\")\n\ndod_corpus &lt;- corpus(dod_texts)\n\nsummary(dod_corpus)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#dod-document-feature-matrix",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#dod-document-feature-matrix",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "DOD Document-Feature Matrix",
+    "text": "DOD Document-Feature Matrix\n\ndod_tokens &lt;- tokens(\n  dod_corpus,\n  remove_punct = TRUE,\n  remove_numbers = TRUE,\n  remove_symbols = TRUE\n)\n\ndod_tokens &lt;- tokens_remove(dod_tokens, stopwords(\"english\"))\n\ndod_dfm &lt;- dfm(dod_tokens)\n\ndod_dfm"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#dod-word-frequency",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#dod-word-frequency",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "DOD Word Frequency",
+    "text": "DOD Word Frequency\n\ntopfeatures(dod_dfm, 40)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#interpretation-of-dod-text-analytics",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#interpretation-of-dod-text-analytics",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Interpretation of DOD Text Analytics",
+    "text": "Interpretation of DOD Text Analytics\nThe DOD reports are likely to contain recurring terms related to security, military capability, China, defense, strategy, technology, regional threats, modernization, and national interests. A frequency-based analysis can show which terms dominate the documents, while comparison over time can show whether the language of threat, cooperation, modernization, or regional strategy changes across reports.\nThis type of analysis is useful because government reports are long and difficult to compare manually. Text analytics helps summarize broad patterns across many documents."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#part-3-what-is-wordfish",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#part-3-what-is-wordfish",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Part 3: What Is Wordfish?",
+    "text": "Part 3: What Is Wordfish?\nWordfish is a text-scaling method used to estimate the positions of documents based on word usage. It is often used in political text analysis when researchers want to compare documents, parties, speeches, or institutions along a latent dimension.\nIn simple terms, Wordfish assumes that documents using similar patterns of words are closer together, while documents using different patterns of words are farther apart. The method estimates document positions from word frequencies without requiring the researcher to manually code every document.\nIn political analysis, Wordfish can be used to compare ideological or policy positions across speeches, manifestos, reports, or other political texts."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#running-wordfish-on-dod-reports",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#running-wordfish-on-dod-reports",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Running Wordfish on DOD Reports",
+    "text": "Running Wordfish on DOD Reports\n\ndod_wordfish &lt;- textmodel_wordfish(dod_dfm)\n\nsummary(dod_wordfish)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#plotting-wordfish-positions",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#plotting-wordfish-positions",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Plotting Wordfish Positions",
+    "text": "Plotting Wordfish Positions\n\ntextplot_scale1d(dod_wordfish)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#interpreting-wordfish-results",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#interpreting-wordfish-results",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Interpreting Wordfish Results",
+    "text": "Interpreting Wordfish Results\nFor the DOD reports, Wordfish can be used to compare whether reports from different years occupy different positions in the estimated textual space. If later reports use more language related to military modernization, competition, technology, or strategic rivalry, Wordfish may place those documents differently from earlier reports.\nThe results should be interpreted carefully. Wordfish estimates relative textual positions, not direct causal explanations. A document’s position depends on word-use patterns, preprocessing choices, and the set of documents included in the analysis."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#part-4-comparing-positions",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#part-4-comparing-positions",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Part 4: Comparing Positions",
+    "text": "Part 4: Comparing Positions\nPositions can be compared by examining the Wordfish document scores. Documents with similar scores are textually similar along the estimated dimension. Documents with very different scores are more distinct in their word-use patterns.\n\ndod_positions &lt;- data.frame(\n  document = docnames(dod_dfm),\n  theta = dod_wordfish$theta\n)\n\ndod_positions\n\n\nggplot(dod_positions, aes(x = reorder(document, theta), y = theta)) +\n  geom_col() +\n  coord_flip() +\n  labs(\n    title = \"Wordfish Estimated Positions of DOD Reports\",\n    x = \"Document\",\n    y = \"Estimated Wordfish Position\"\n  )"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#part-5-apsa-ejobs-hackathon",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#part-5-apsa-ejobs-hackathon",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Part 5: APSA eJobs Hackathon",
+    "text": "Part 5: APSA eJobs Hackathon\nThe final part of the assignment asks for a corpus using the APSA eJobs website or the Teams Hackathon folder. Because APSA access may require membership, the Teams-provided PDF files can be used instead.\nA possible workflow is:\n\npsjobs_texts &lt;- readtext(\"PSJobs201606_202603/*.pdf\")\n\npsjobs_corpus &lt;- corpus(psjobs_texts)\n\nsummary(psjobs_corpus)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#apsa-ejobs-tokens-and-dfm",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#apsa-ejobs-tokens-and-dfm",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "APSA eJobs Tokens and DFM",
+    "text": "APSA eJobs Tokens and DFM\n\npsjobs_tokens &lt;- tokens(\n  psjobs_corpus,\n  remove_punct = TRUE,\n  remove_numbers = TRUE,\n  remove_symbols = TRUE\n)\n\npsjobs_tokens &lt;- tokens_remove(psjobs_tokens, stopwords(\"english\"))\n\npsjobs_dfm &lt;- dfm(psjobs_tokens)\n\npsjobs_dfm"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#apsa-ejobs-word-frequency",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#apsa-ejobs-word-frequency",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "APSA eJobs Word Frequency",
+    "text": "APSA eJobs Word Frequency\n\ntopfeatures(psjobs_dfm, 40)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#possible-apsa-ejobs-analysis",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#possible-apsa-ejobs-analysis",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Possible APSA eJobs Analysis",
+    "text": "Possible APSA eJobs Analysis\nUsing quanteda, APSA eJobs postings can be analyzed to identify common skill requirements, methodological language, and topic areas in political science job advertisements.\nPossible research questions include:\n\nHow often do job ads mention quantitative, qualitative, computational, or mixed-methods skills?\nDo postings increasingly mention data science, machine learning, Python, R, or text analysis over time?\nWhich subfields appear most frequently in the job ads?\nAre there changes in the language of teaching, research, diversity, or public policy across time?\n\nThis type of analysis is useful because job ads reveal how academic labor-market expectations change over time."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#reflection",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#reflection",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Reflection",
+    "text": "Reflection\nThis assignment shows how text analytics can transform large collections of documents into structured data. The main steps are corpus creation, tokenization, cleaning, document-feature matrix construction, frequency analysis, and scaling.\nThe U.S. inaugural speeches are useful for comparing political language over time. The DOD reports are useful for studying changes in national security language and strategic framing. Wordfish provides a way to compare document positions based on word-use patterns. The APSA eJobs documents can be used to study academic labor-market trends and skill demands.\nThe main limitation is that text analytics depends heavily on preprocessing choices. Removing stopwords, selecting documents, stemming words, and deciding whether to include rare terms can all affect the results. Therefore, text analytics should be treated as a systematic research tool, not as an automatic answer machine."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment04/assignment04.html#conclusion",
+    "href": "assignments/knowledge-mining/assignment04/assignment04.html#conclusion",
+    "title": "Assignment 4: Text Analytics Using quanteda",
+    "section": "Conclusion",
+    "text": "Conclusion\nText analytics using quanteda provides a practical way to analyze large collections of political and institutional texts. Frequency analysis helps identify dominant terms, while scaling methods such as Wordfish help compare document positions. These methods are especially useful when the number of documents is too large for manual reading alone.\nFor this assignment, the main lesson is that text data must be carefully prepared before analysis. Corpus construction, tokenization, cleaning, and interpretation all matter. Wordfish and other scaling methods can reveal meaningful differences across documents, but the results should always be interpreted in relation to the documents, the research question, and the preprocessing decisions."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "",
+    "text": "This assignment examines how two AI models can support the development of a structured literature review on data mining and machine learning applications. I compared two models: ChatGPT and Claude. Although the assignment prompt listed ChatGPT, Copilot, and Grok as examples, Dr. Ho clarified in class that students could use any two AI models. I selected ChatGPT and Claude because both are widely used for academic writing, structured reasoning, and research-oriented drafting.\nThe goal of this exercise was not only to generate a review, but also to evaluate how each model handled academic structure, synthesis, trends, research gaps, testable hypotheses, and references."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#overview",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#overview",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "",
+    "text": "This assignment examines how two AI models can support the development of a structured literature review on data mining and machine learning applications. I compared two models: ChatGPT and Claude. Although the assignment prompt listed ChatGPT, Copilot, and Grok as examples, Dr. Ho clarified in class that students could use any two AI models. I selected ChatGPT and Claude because both are widely used for academic writing, structured reasoning, and research-oriented drafting.\nThe goal of this exercise was not only to generate a review, but also to evaluate how each model handled academic structure, synthesis, trends, research gaps, testable hypotheses, and references."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#step-1-baseline-prompt",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#step-1-baseline-prompt",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "Step 1: Baseline Prompt",
+    "text": "Step 1: Baseline Prompt\nThe same baseline prompt was submitted to both ChatGPT and Claude:\n\nConduct a 2,000-word structured systematic literature review on the applications of data mining and machine learning in real-world domains.\nPlease organize the review with the following sections:\n\nIntroduction\n\nReview Methodology\n\nSearch strategy\n\nInclusion and exclusion criteria\n\nScope of the literature\n\n\nMajor Application Domains\n\nHealthcare\n\nFinance\n\nEducation\n\nPublic policy or government\n\nBusiness and marketing\n\n\nSynthesis of Key Findings\n\nEmerging Trends\n\nResearch Gaps and Limitations\n\nOne Testable Hypothesis\n\nConclusion\n\nReferences\n\nUse an academic tone suitable for a graduate-level knowledge mining course. Focus on synthesis rather than only listing examples. Include real scholarly references where possible. Do not fabricate citations. If any citation is uncertain, clearly mark it as needing verification."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#step-2-analysis-of-initial-model-responses",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#step-2-analysis-of-initial-model-responses",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "Step 2: Analysis of Initial Model Responses",
+    "text": "Step 2: Analysis of Initial Model Responses\nThe two models produced similar overall structures, but they differed in tone, depth, and academic polish.\n\n\n\n\n\n\n\n\nEvaluation Criterion\nChatGPT Response\nClaude Response\n\n\n\n\nStructure\nChatGPT followed the requested structure clearly. It included an introduction, methodology, application domains, synthesis, trends, gaps, hypothesis, conclusion, and references.\nClaude also followed the requested structure, but used a more formal systematic-review style with clearer subsection organization.\n\n\nMethodology\nChatGPT described a structured review approach and referenced PRISMA-style reporting. However, the methodology read more like a simplified review design than a full systematic review.\nClaude provided a more detailed methodology, including databases, keyword families, inclusion criteria, exclusion criteria, and scope limitations.\n\n\nSynthesis\nChatGPT synthesized across domains clearly and used accessible language to explain common patterns such as prediction, data quality, fairness, and interpretability.\nClaude provided stronger cross-domain synthesis, especially around data standardization, algorithmic bias, regulatory oversight, and power asymmetry.\n\n\nTrends and Gaps\nChatGPT identified useful trends such as explainable AI, human-in-the-loop systems, responsible AI governance, and unstructured data.\nClaude identified similar trends but framed them more academically, including federated learning, large language models, causal machine learning, and algorithmic auditing.\n\n\nHypothesis\nChatGPT proposed a relevant and testable hypothesis comparing interpretable human-in-the-loop models with black-box accuracy-focused models.\nClaude proposed a more specific hypothesis connecting regulatory oversight and data standards with lower demographic disparity.\n\n\nReferences\nChatGPT included many references and links, but some links appeared web-generated and would need cleaning before formal submission.\nClaude provided cleaner APA-style references with DOIs for several sources, but some citations were still marked as needing verification.\n\n\nOverall Assessment\nChatGPT was clearer and more practical, but less polished as a formal literature review.\nClaude was more academically polished and better suited as the foundation for the final synthesized review.\n\n\n\n\nSummary of ChatGPT Response\nChatGPT’s response was useful because it explained the topic in clear and accessible language. It framed data mining and machine learning as socio-technical systems, not just technical tools. This was one of its strongest contributions. It also emphasized that model performance alone is not enough; real-world usefulness depends on interpretation, fairness, institutional context, and accountability.\nHowever, ChatGPT’s response was less formal than Claude’s. Some of the wording was conversational, and some references included links that would need to be cleaned or verified before a final academic submission. The response was strong for understanding the topic, but it needed refinement to sound more like a graduate-level literature review.\n\n\nSummary of Claude Response\nClaude’s response was more polished and academic. It gave a stronger explanation of why machine learning applications are more mature in some domains, such as healthcare and finance, than in others, such as education and public policy. Claude also provided stronger cross-domain synthesis, especially around data standardization, algorithmic bias, regulatory oversight, and power asymmetry.\nThe main weakness of Claude’s response was that some citations were still marked as needing verification. Also, the writing sometimes sounded very confident, so the claims needed to be reviewed carefully to avoid overstatement."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#step-3-refined-prompts",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#step-3-refined-prompts",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "Step 3: Refined Prompts",
+    "text": "Step 3: Refined Prompts\nAfter reviewing the initial responses, I created refined prompts for each model.\n\nRefined Prompt for ChatGPT\n\nRevise the previous systematic literature review on data mining and machine learning applications to make it more academically rigorous and less conversational.\nPlease improve the response in the following ways:\n\nStrengthen the methodology section by clearly distinguishing this as a structured review rather than a full PRISMA systematic review.\nImprove cross-domain synthesis instead of only describing each domain separately.\nUse more precise academic language.\nKeep the five domains: healthcare, finance, education, public policy/government, and business/marketing.\nStrengthen the research gaps section by focusing on implementation evidence, fairness auditing, external validity, and longitudinal evaluation.\nKeep one testable hypothesis, but make it more specific and measurable.\nRemove casual phrases and unsupported claims.\nInclude only references that are likely to be real and verifiable. If uncertain, mark the reference as needing verification.\n\n\n\n\nRefined Prompt for Claude\n\nRevise the previous systematic literature review on data mining and machine learning applications with greater attention to source verification, methodological caution, and concise academic writing.\nPlease improve the response in the following ways:\n\nClearly state that the review follows a structured review style but is not a full PRISMA-compliant systematic review.\nKeep the academic tone but reduce overstatement.\nStrengthen the comparison between domains by explaining why healthcare and finance appear more mature than education and public policy.\nKeep the discussion of algorithmic bias, interpretability, fairness auditing, and regulatory oversight.\nRemove or replace citations that are uncertain unless they are clearly marked as needing verification.\nMake the testable hypothesis practical enough for a graduate-level empirical research design.\nProvide a concise final review suitable for a course assignment."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#step-4-final-synthesized-systematic-literature-review",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#step-4-final-synthesized-systematic-literature-review",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "Step 4: Final Synthesized Systematic Literature Review",
+    "text": "Step 4: Final Synthesized Systematic Literature Review\n\nIntroduction\nData mining and machine learning have become major tools for extracting useful patterns from large and complex datasets. In the knowledge discovery tradition, data mining refers to the process of identifying valid, novel, useful, and understandable patterns in data. Machine learning extends this process by using algorithms that can learn predictive or classificatory patterns from data. Together, these methods are now used in healthcare, finance, education, public policy, government administration, business, and marketing.\nThe main value of data mining and machine learning is not simply that they can process large datasets quickly. Their real value comes from their ability to support prediction, classification, clustering, anomaly detection, recommendation, and decision support. However, the literature also shows that machine learning is not automatically beneficial. The quality of the data, the fairness of the model, the interpretability of the results, and the institutional setting all influence whether these tools produce useful or harmful outcomes.\nThis review synthesizes major applications of data mining and machine learning across five domains: healthcare, finance, education, public policy/government, and business/marketing. The review focuses on cross-domain patterns rather than only listing examples from each field.\n\n\nMethodology\nThis review follows a structured literature review style, but it is not a full PRISMA-compliant systematic review. The purpose was to identify major themes, applications, trends, and gaps in the literature on data mining and machine learning applications.\nThe review focused on peer-reviewed and widely cited literature related to machine learning, data mining, predictive modeling, classification, clustering, recommendation systems, fraud detection, educational data mining, public-sector algorithms, and healthcare analytics. The main domains were selected because they represent common real-world settings where data mining and machine learning are used for decision-making.\nThe inclusion criteria focused on studies and reviews that discussed real-world applications, methodological issues, ethical challenges, or cross-domain implications. Purely technical studies without real-world application context were less central to the review. The review also prioritized sources that helped explain broader issues such as bias, interpretability, fairness, accountability, and implementation.\n\n\nHealthcare\nHealthcare is one of the most important domains for machine learning because decisions can directly affect patient well-being. Applications include disease prediction, medical imaging, hospital readmission prediction, patient risk scoring, personalized medicine, drug discovery, and public-health surveillance.\nMachine learning has shown strong performance in medical imaging and clinical prediction. For example, deep learning models have been used to classify skin cancer images and detect pneumonia from chest X-rays. Healthcare data are often rich and complex, including electronic health records, clinical notes, laboratory results, medical images, and insurance claims. These data sources make healthcare a promising domain for predictive modeling.\nHowever, healthcare also illustrates the risks of algorithmic bias. A model can be accurate in a technical sense while still producing unfair outcomes if the target variable reflects structural inequality. For example, if healthcare cost is used as a proxy for medical need, the model may underestimate the needs of groups that historically had less access to care. This shows that model design requires careful thinking about what the outcome variable actually measures.\nHealthcare also has stronger regulatory and validation expectations than many other domains. Because errors can have serious consequences, models often require clinical validation, transparency, and post-deployment monitoring. This makes healthcare a relatively mature domain for machine learning, but also one where implementation is slower and more cautious.\n\n\nFinance\nFinance has a long history of quantitative modeling, so machine learning fits naturally into many financial tasks. Common applications include credit scoring, fraud detection, anti-money-laundering monitoring, algorithmic trading, insurance underwriting, customer segmentation, and risk management.\nFraud detection is one of the strongest use cases. Financial institutions process massive numbers of transactions, and fraudulent cases are rare compared with legitimate transactions. This creates a class imbalance problem, where ordinary accuracy is not enough. Metrics such as precision, recall, F1-score, and cost-sensitive evaluation are more useful because the cost of missing fraud can be high.\nCredit scoring is another major application, but it raises fairness and interpretability concerns. If historical lending data reflect unequal access to credit, machine learning models may reproduce those inequalities. Financial institutions also face regulatory pressure to explain credit decisions. This creates a tension between using complex models for predictive accuracy and using interpretable models for accountability.\nOverall, finance is a mature domain because it has structured data, clear business objectives, and strong incentives for prediction. At the same time, it requires careful governance because financial decisions can affect access to loans, insurance, and economic opportunity.\n\n\nEducation\nEducational data mining and learning analytics use data from schools, universities, online platforms, and learning management systems. Applications include student performance prediction, dropout risk modeling, learner behavior clustering, adaptive learning, recommendation systems, and analysis of discussion posts or written assignments.\nThe main promise of machine learning in education is early intervention. If a model can identify students at risk of failing or withdrawing, institutions may be able to provide tutoring, advising, or other support before the student falls too far behind. Learning management systems also generate detailed behavioral data, such as login frequency, assignment submission timing, quiz performance, and participation patterns.\nHowever, education is more difficult than finance or healthcare because the target outcome is often contested. Grades, GPA, and course completion are commonly used as indicators of learning, but they are imperfect proxies. They may reflect socioeconomic background, prior preparation, language barriers, or institutional grading practices rather than learning alone.\nThere is also a risk that predictive models may label students in harmful ways. If a student is classified as “high risk” but the institution does not provide meaningful support, the model may stigmatize rather than help. For this reason, educational machine learning should be connected to ethical intervention, not just prediction.\n\n\nPublic Policy and Government\nMachine learning in public policy and government includes predictive policing, child welfare screening, tax compliance, benefits fraud detection, public health surveillance, disaster response, transportation planning, and analysis of public comments or administrative documents.\nThis is one of the most ethically sensitive domains because government decisions can directly affect rights, benefits, policing, family life, and access to public services. A private recommendation system may influence what someone buys, but a government algorithm may influence whether someone is investigated, denied benefits, or classified as risky.\nThe major challenge in government machine learning is that the data often come from institutional processes that may already be biased. For example, crime data may reflect policing patterns rather than actual crime patterns. If a predictive policing model is trained on arrest data, it may send more police to areas that were already heavily policed, creating a feedback loop.\nGovernment applications also raise concerns about transparency and contestability. People affected by algorithmic decisions may not know that an algorithm was used, may not understand how the decision was made, and may not have a clear way to appeal. Therefore, public-sector machine learning requires stronger accountability mechanisms than many private-sector applications.\n\n\nBusiness and Marketing\nBusiness and marketing were early adopters of data mining because firms collect large amounts of customer and transaction data. Applications include customer segmentation, churn prediction, recommendation systems, market-basket analysis, dynamic pricing, sentiment analysis, targeted advertising, and customer relationship management.\nThe strongest business use case is personalization. Companies use machine learning to recommend products, predict customer preferences, identify customers likely to leave, and tailor promotions. Recommendation systems used by companies such as Amazon, Netflix, and Spotify are well-known examples of machine learning in commercial settings.\nHowever, marketing analytics also raises concerns about privacy and manipulation. Firms can infer sensitive characteristics from customer behavior, even when customers did not directly provide that information. A model that predicts what a customer wants can also be used to exploit behavioral vulnerabilities. This means the ethical issue is not only whether the prediction is accurate, but how the prediction is used.\nCompared with healthcare and finance, business and marketing often face fewer regulatory constraints. This allows faster deployment, but it also means there may be less independent auditing and accountability.\n\n\nCross-Domain Synthesis\nAcross the five domains, several patterns appear.\nFirst, machine learning applications are more mature where data are abundant, standardized, and continuously generated. Finance and marketing benefit from structured transaction data. Healthcare benefits from electronic health records and medical imaging, although privacy and regulation create additional complexity. Education and government often have more fragmented and context-dependent data.\nSecond, prediction dominates most applications. Across domains, organizations use machine learning to predict risk, identify anomalies, classify cases, recommend actions, and prioritize interventions. However, prediction alone is not enough. A model must be connected to a meaningful action. Otherwise, prediction becomes an academic exercise rather than a useful decision-support tool.\nThird, fairness and bias are recurring problems. Machine learning models learn from historical data, and historical data often reflect unequal social conditions. This means that bias is not limited to one domain. It appears in healthcare, finance, education, public policy, and marketing.\nFourth, interpretability becomes more important when decisions are high-stakes. In domains such as healthcare, finance, and government, affected individuals need explanations and appeal mechanisms. Black-box models may be powerful, but they can be difficult to justify when they influence major life outcomes.\nFifth, many studies still focus more on model performance than real-world impact. High accuracy, AUC, or F1-score does not prove that a model improves decisions after deployment. More longitudinal evaluation is needed to study whether machine learning systems actually improve outcomes over time.\n\n\nEmerging Trends\nSeveral trends are shaping the future of data mining and machine learning applications.\nOne major trend is explainable and interpretable machine learning. As models are used in high-stakes domains, users and regulators increasingly demand explanations. In some cases, simpler interpretable models may be preferable to complex black-box models.\nA second trend is human-in-the-loop machine learning. Rather than fully automating decisions, many organizations use machine learning to support human judgment. This is especially important in medicine, fraud investigation, education advising, and public administration.\nA third trend is responsible AI governance. Organizations are beginning to pay more attention to fairness audits, model documentation, data provenance, privacy, and monitoring for model drift.\nA fourth trend is the use of unstructured data. Text, images, audio, social media, clinical notes, and administrative records are increasingly analyzed with machine learning. This expands the power of data mining but also creates new privacy and consent concerns.\nA fifth trend is causal machine learning. Traditional machine learning is strong at prediction, but many real-world decisions require understanding the likely effect of an intervention. Causal methods are therefore becoming more important in healthcare, education, and public policy.\n\n\nResearch Gaps and Limitations\nThe first major research gap is implementation evidence. Many studies show that a model can predict an outcome, but fewer show that the model improves decisions or outcomes after deployment.\nThe second gap is fairness auditing. Many studies mention bias, but fewer conduct detailed subgroup analysis or fairness testing. This is a serious limitation in high-stakes domains.\nThe third gap is external validity. Models trained in one institution, country, or time period may not generalize to another. This is especially important in healthcare and education, where populations and practices vary.\nThe fourth gap is interpretability. Some studies use complex models and then add explanation tools, but they do not always test whether those explanations are useful to real decision-makers.\nThe fifth gap is privacy. Healthcare, education, finance, and government all involve sensitive data. However, many studies treat data availability as a technical issue rather than an ethical and governance issue.\n\n\nTestable Hypothesis\nBased on this review, the following hypothesis is proposed:\nH1: In high-stakes domains, machine learning systems that combine interpretable models with structured human review will produce lower subgroup error disparities and higher user trust than black-box models optimized only for predictive accuracy.\nThis hypothesis could be tested in domains such as student-risk prediction, fraud detection, or clinical triage. Researchers could compare two deployment conditions: one using a black-box model and one using an interpretable model with human review. Outcomes could include predictive performance, subgroup error rates, decision consistency, user trust, intervention uptake, and downstream outcome improvement.\n\n\nConclusion\nData mining and machine learning have become powerful tools for extracting patterns from large and complex datasets. They support prediction, classification, clustering, anomaly detection, recommendation, and decision-making across healthcare, finance, education, government, and business.\nHowever, the main lesson from the literature is that machine learning is not automatically beneficial. Its value depends on the quality of the data, the design of the model, the fairness of the outcome, the interpretability of the results, and the accountability of the institution using it. The strongest applications are not simply those with the highest accuracy, but those that connect prediction to responsible action.\nThe future of applied machine learning should therefore focus not only on better algorithms, but also on better governance, fairness auditing, longitudinal evaluation, and human-centered implementation."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#step-5-reflection",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#step-5-reflection",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "Step 5: Reflection",
+    "text": "Step 5: Reflection\n\nHow did each model approach the systematic review differently?\nChatGPT approached the review in a clearer and more explanatory way. Its response was easier to read and was useful for understanding the major issues in simple language. It emphasized that machine learning should be understood as part of a socio-technical system, which was helpful for framing the topic.\nClaude approached the review in a more formal academic style. Its response sounded more like a graduate-level literature review. It gave stronger cross-domain synthesis and explained the role of data standardization, regulatory oversight, algorithmic bias, and power asymmetry more effectively.\nOverall, ChatGPT was stronger for clarity and practical explanation, while Claude was stronger for academic tone and synthesis.\n\n\nWhich prompt refinements yielded the best results?\nThe most useful refinements were the instructions to improve cross-domain synthesis, avoid simple domain-by-domain description, reduce overstatement, and distinguish a structured review from a full PRISMA-compliant systematic review. These refinements improved the academic precision of the output.\nFor ChatGPT, the most useful refinement was asking it to become less conversational and more academically rigorous. For Claude, the most useful refinement was asking it to reduce overstatement and pay closer attention to citation verification.\n\n\nWhat did I learn about using AI for structured academic reviews?\nThis exercise showed me that AI can be very useful for organizing a literature review, identifying themes, drafting comparisons, and developing hypotheses. However, it also showed that AI outputs must be checked carefully. A well-written response can still include uncertain citations, overconfident claims, or simplified methodology.\nI learned that AI works best when it is used as a drafting and thinking partner rather than as a final authority. The student still has to judge the quality of the structure, verify sources, refine the argument, and make sure the final submission is accurate and appropriate for the assignment."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment02/assignment02.html#references",
+    "href": "assignments/knowledge-mining/assignment02/assignment02.html#references",
+    "title": "Assignment 2: Prompt Exercise",
+    "section": "References",
+    "text": "References\nAdomavicius, G., & Tuzhilin, A. (2005). Toward the next generation of recommender systems: A survey of the state-of-the-art and possible extensions. IEEE Transactions on Knowledge and Data Engineering, 17(6), 734–749.\nBreiman, L. (2001). Random forests. Machine Learning, 45(1), 5–32.\nChen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.\nFayyad, U., Piatetsky-Shapiro, G., & Smyth, P. (1996). From data mining to knowledge discovery in databases. AI Magazine, 17(3), 37–54.\nLeCun, Y., Bengio, Y., & Hinton, G. (2015). Deep learning. Nature, 521(7553), 436–444.\nLum, K., & Isaac, W. (2016). To predict and serve? Significance, 13(5), 14–19.\nNgai, E. W. T., Xiu, L., & Chau, D. C. K. (2009). Application of data mining techniques in customer relationship management: A literature review and classification. Expert Systems with Applications, 36(2), 2592–2602.\nObermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. Science, 366(6464), 447–453.\nPage, M. J., McKenzie, J. E., Bossuyt, P. M., et al. (2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. BMJ, 372, n71.\nRudin, C. (2019). Stop explaining black box machine learning models for high-stakes decisions and use interpretable models instead. Nature Machine Intelligence, 1, 206–215."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "CV",
+    "section": "",
+    "text": "Download PDF Open in new tab"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Tanmoy Biswas",
     "section": "",
-    "text": "I’m a data visualization enthusiast who turns messy information into clean, compelling stories. I enjoy building clear charts, dashboards, and reproducible workflows with R, Quarto, and Git. This site will host class projects, notes, and experiments as I learn and share what works (and what doesn’t)."
+    "text": "I’m a data visualization enthusiast who turns messy information into clean, compelling stories. I enjoy building clear charts, dashboards, and reproducible workflows with R, Quarto, and Git. This site will host class projects, notes, and experiments as I learn and share what works and what doesn’t."
   },
   {
     "objectID": "about.html",
@@ -14,10 +231,143 @@
     "text": "About this site"
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "CV",
+    "objectID": "assignments/knowledge-mining/index.html",
+    "href": "assignments/knowledge-mining/index.html",
+    "title": "Knowledge Mining Assignments",
     "section": "",
-    "text": "Download PDF Open in new tab"
+    "text": "This page contains my submitted assignments for The University of Texas at Dallas’s EPPS 6323: Knowledge Mining class taught by Dr. Karl Ho."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/index.html#assignment-1",
+    "href": "assignments/knowledge-mining/index.html#assignment-1",
+    "title": "Knowledge Mining Assignments",
+    "section": "Assignment 1",
+    "text": "Assignment 1\n\nLab 01: R Programming Basics I\nLab 02: R Programming Basics II"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/index.html#assignment-2",
+    "href": "assignments/knowledge-mining/index.html#assignment-2",
+    "title": "Knowledge Mining Assignments",
+    "section": "Assignment 2",
+    "text": "Assignment 2\n\nPrompt Exercise: Systematic Literature Review Using Multiple AI Models"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/index.html#assignment-3",
+    "href": "assignments/knowledge-mining/index.html#assignment-3",
+    "title": "Knowledge Mining Assignments",
+    "section": "Assignment 3",
+    "text": "Assignment 3\n\nMachine Learning Exercise: Regression and TEDS2016"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/index.html#assignment-4",
+    "href": "assignments/knowledge-mining/index.html#assignment-4",
+    "title": "Knowledge Mining Assignments",
+    "section": "Assignment 4",
+    "text": "Assignment 4\n\nText Analytics Using quanteda"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "",
+    "text": "This assignment applies basic machine learning and regression concepts using the TEDS2016 dataset. The exercise follows the assigned lab instructions by loading the dataset, estimating a multiple regression model, creating a custom regplot() function, and using the function to examine the relationship between the dependent variable and selected predictors.\nThe assigned predictors are age, education, and income. The assignment also asks what problem appears when plotting the dependent variable and why this problem occurs."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#overview",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#overview",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "",
+    "text": "This assignment applies basic machine learning and regression concepts using the TEDS2016 dataset. The exercise follows the assigned lab instructions by loading the dataset, estimating a multiple regression model, creating a custom regplot() function, and using the function to examine the relationship between the dependent variable and selected predictors.\nThe assigned predictors are age, education, and income. The assignment also asks what problem appears when plotting the dependent variable and why this problem occurs."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#load-packages",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#load-packages",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Load Packages",
+    "text": "Load Packages\n\nlibrary(haven)\n\n## Load the TEDS2016 Dataset\n\n\nTEDS_2016 &lt;- haven::read_dta(\n  \"https://github.com/datageneration/home/blob/master/DataProgramming/data/TEDS_2016.dta?raw=true\"\n)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#inspect-the-dataset",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#inspect-the-dataset",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Inspect the Dataset",
+    "text": "Inspect the Dataset\nThe dataset loaded successfully. It contains 1,690 observations and 54 variables.\n\ndim(TEDS_2016)\n\n[1] 1690   54\n\n\n\nnames(TEDS_2016)\n\n [1] \"District\"        \"Sex\"             \"Age\"             \"Edu\"            \n [5] \"Arear\"           \"Career\"          \"Career8\"         \"Ethnic\"         \n [9] \"Party\"           \"PartyID\"         \"Tondu\"           \"Tondu3\"         \n[13] \"nI2\"             \"votetsai\"        \"green\"           \"votetsai_nm\"    \n[17] \"votetsai_all\"    \"Independence\"    \"Unification\"     \"sq\"             \n[21] \"Taiwanese\"       \"edu\"             \"female\"          \"whitecollar\"    \n[25] \"lowincome\"       \"income\"          \"income_nm\"       \"age\"            \n[29] \"KMT\"             \"DPP\"             \"npp\"             \"noparty\"        \n[33] \"pfp\"             \"South\"           \"north\"           \"Minnan_father\"  \n[37] \"Mainland_father\" \"Econ_worse\"      \"Inequality\"      \"inequality5\"    \n[41] \"econworse5\"      \"Govt_for_public\" \"pubwelf5\"        \"Govt_dont_care\" \n[45] \"highincome\"      \"votekmt\"         \"votekmt_nm\"      \"Blue\"           \n[49] \"Green\"           \"No_Party\"        \"voteblue\"        \"voteblue_nm\"    \n[53] \"votedpp_1\"       \"votekmt_1\""
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#select-variables",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#select-variables",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Select Variables",
+    "text": "Select Variables\nFor this assignment, I use Tondu as the dependent variable. The independent variables are age, education, and income.\n\ntable(TEDS_2016$Tondu, useNA = \"ifany\")\n\n\n  1   2   3   4   5   6   9 \n 27 180 546 328 380 108 121 \n\n\n\nsummary(TEDS_2016$Age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n    1.0     2.0     3.0     3.3     5.0     5.0 \n\nsummary(TEDS_2016$Edu)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  1.000   2.000   3.000   3.334   5.000   9.000 \n\nsummary(TEDS_2016$income)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  1.000   3.000   5.500   5.324   7.000  10.000"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#prepare-variables",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#prepare-variables",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Prepare Variables",
+    "text": "Prepare Variables\nThe variables are converted into numeric form for the regression exercise.\n\nTEDS_2016$Tondu_num &lt;- as.numeric(TEDS_2016$Tondu)\nTEDS_2016$age_num &lt;- as.numeric(TEDS_2016$Age)\nTEDS_2016$edu_num &lt;- as.numeric(TEDS_2016$Edu)\nTEDS_2016$income_num &lt;- as.numeric(TEDS_2016$income)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#multiple-regression-model",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#multiple-regression-model",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Multiple Regression Model",
+    "text": "Multiple Regression Model\nThe multiple regression model estimates the relationship between the dependent variable Tondu and the predictors age, education, and income.\n\nmodel1 &lt;- lm(Tondu_num ~ age_num + edu_num + income_num, data = TEDS_2016)\n\nsummary(model1)\n\n\nCall:\nlm(formula = Tondu_num ~ age_num + edu_num + income_num, data = TEDS_2016)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.7393 -1.1787 -0.3877  1.0378  6.1043 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  5.18243    0.21369  24.252  &lt; 2e-16 ***\nage_num     -0.05021    0.03567  -1.408   0.1594    \nedu_num     -0.20090    0.03433  -5.853  5.8e-09 ***\nincome_num  -0.04137    0.01641  -2.521   0.0118 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.745 on 1686 degrees of freedom\nMultiple R-squared:  0.03482,   Adjusted R-squared:  0.0331 \nF-statistic: 20.28 on 3 and 1686 DF,  p-value: 6.574e-13"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#create-the-regplot-function",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#create-the-regplot-function",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Create the regplot() Function",
+    "text": "Create the regplot() Function\nThe function below combines lm(), plot(), and abline() to create a scatterplot with a fitted regression line.\n\nregplot &lt;- function(x, y) {\n  fit &lt;- lm(y ~ x)\n  plot(\n    x, y,\n    xlab = deparse(substitute(x)),\n    ylab = deparse(substitute(y)),\n    main = \"Regression Fit Plot\"\n  )\n  abline(fit, col = \"red\")\n}"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#regression-plot-age",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#regression-plot-age",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Regression Plot: Age",
+    "text": "Regression Plot: Age\n\nregplot(TEDS_2016$age_num, TEDS_2016$Tondu_num)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#regression-plot-education",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#regression-plot-education",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Regression Plot: Education",
+    "text": "Regression Plot: Education\n\nregplot(TEDS_2016$edu_num, TEDS_2016$Tondu_num)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#regression-plot-income",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#regression-plot-income",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Regression Plot: Income",
+    "text": "Regression Plot: Income\n\nregplot(TEDS_2016$income_num, TEDS_2016$Tondu_num)"
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#what-is-the-problem",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#what-is-the-problem",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "What Is the Problem?",
+    "text": "What Is the Problem?\nThe main problem is that the dependent variable, Tondu, is not a continuous numerical variable. It is a categorical or ordinal variable with a limited number of response categories. The frequency table shows that Tondu has only a small number of categories rather than a wide continuous range of values.\nBecause of this, the scatterplots do not show a smooth continuous relationship. Instead, the dependent variable appears in horizontal bands because many respondents share the same category values."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#why-does-this-problem-happen",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#why-does-this-problem-happen",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Why Does This Problem Happen?",
+    "text": "Why Does This Problem Happen?\nThis problem happens because Tondu represents categories of political preference. Ordinary least squares regression assumes that the dependent variable is continuous and that the relationship between the independent and dependent variables can be represented reasonably with a straight line.\nWhen the dependent variable has only a few ordered categories, a linear regression plot may be misleading. The red regression line may suggest a continuous relationship, but the actual outcome is categorical or ordinal."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#what-can-be-done-to-improve-prediction",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#what-can-be-done-to-improve-prediction",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "What Can Be Done to Improve Prediction?",
+    "text": "What Can Be Done to Improve Prediction?\nSeveral changes could improve prediction.\nFirst, the model should use a method that better matches the structure of the dependent variable. If Tondu is treated as an ordered outcome, an ordinal logistic regression model would be more appropriate than ordinary least squares regression. If the categories are treated as nominal rather than ordered, a multinomial logistic regression model could be used.\nSecond, additional predictors could be added. Age, education, and income may explain some variation, but political attitudes are usually influenced by many other factors. Variables such as party identification, national identity, economic evaluation, gender, region, and views about Taiwan’s political status may improve prediction.\nThird, missing values should be handled carefully. If missing data are ignored without checking the pattern, the model may become biased or lose useful observations.\nFourth, model performance should be evaluated using appropriate metrics. For categorical outcomes, classification accuracy, confusion matrices, or other classification measures may be more informative than only looking at regression coefficients."
+  },
+  {
+    "objectID": "assignments/knowledge-mining/assignment03/assignment03.html#conclusion",
+    "href": "assignments/knowledge-mining/assignment03/assignment03.html#conclusion",
+    "title": "Assignment 3: Machine Learning Exercise",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis exercise shows that model choice should depend on the type of dependent variable. A simple regression line can be useful for understanding linear relationships between continuous variables, but it is not ideal when the dependent variable is categorical or ordinal. For the Tondu variable, an ordinal or multinomial model would likely be more appropriate than a basic linear regression model."
   }
 ]

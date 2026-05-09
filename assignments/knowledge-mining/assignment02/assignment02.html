@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tanmoy Biswas">
+<meta name="description" content="Portfolio &amp; coursework in data visualization and analytics.">
+
+<title>Assignment 2: Prompt Exercise – Tanmoy Biswas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Assignment 2: Prompt Exercise – Tanmoy Biswas">
+<meta property="og:description" content="Portfolio &amp; coursework in data visualization and analytics.">
+<meta property="og:image" content="https://Tanmoy-data-science.github.io/assets/headshot.jpg">
+<meta property="og:site_name" content="Tanmoy Biswas">
+<meta name="twitter:title" content="Assignment 2: Prompt Exercise – Tanmoy Biswas">
+<meta name="twitter:description" content="Portfolio &amp; coursework in data visualization and analytics.">
+<meta name="twitter:image" content="https://Tanmoy-data-science.github.io/assets/headshot.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Tanmoy Biswas</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv/index.html"> 
+<span class="menu-text">My Bio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../assignments/knowledge-mining/index.html"> 
+<span class="menu-text">Assignments</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Tanmoy-data-science" rel="noopener" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/tanmoy-biswas7/" rel="noopener" target="_blank"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#step-1-baseline-prompt" id="toc-step-1-baseline-prompt" class="nav-link" data-scroll-target="#step-1-baseline-prompt">Step 1: Baseline Prompt</a></li>
+  <li><a href="#step-2-analysis-of-initial-model-responses" id="toc-step-2-analysis-of-initial-model-responses" class="nav-link" data-scroll-target="#step-2-analysis-of-initial-model-responses">Step 2: Analysis of Initial Model Responses</a>
+  <ul class="collapse">
+  <li><a href="#summary-of-chatgpt-response" id="toc-summary-of-chatgpt-response" class="nav-link" data-scroll-target="#summary-of-chatgpt-response">Summary of ChatGPT Response</a></li>
+  <li><a href="#summary-of-claude-response" id="toc-summary-of-claude-response" class="nav-link" data-scroll-target="#summary-of-claude-response">Summary of Claude Response</a></li>
+  </ul></li>
+  <li><a href="#step-3-refined-prompts" id="toc-step-3-refined-prompts" class="nav-link" data-scroll-target="#step-3-refined-prompts">Step 3: Refined Prompts</a>
+  <ul class="collapse">
+  <li><a href="#refined-prompt-for-chatgpt" id="toc-refined-prompt-for-chatgpt" class="nav-link" data-scroll-target="#refined-prompt-for-chatgpt">Refined Prompt for ChatGPT</a></li>
+  <li><a href="#refined-prompt-for-claude" id="toc-refined-prompt-for-claude" class="nav-link" data-scroll-target="#refined-prompt-for-claude">Refined Prompt for Claude</a></li>
+  </ul></li>
+  <li><a href="#step-4-final-synthesized-systematic-literature-review" id="toc-step-4-final-synthesized-systematic-literature-review" class="nav-link" data-scroll-target="#step-4-final-synthesized-systematic-literature-review">Step 4: Final Synthesized Systematic Literature Review</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#healthcare" id="toc-healthcare" class="nav-link" data-scroll-target="#healthcare">Healthcare</a></li>
+  <li><a href="#finance" id="toc-finance" class="nav-link" data-scroll-target="#finance">Finance</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
+  <li><a href="#public-policy-and-government" id="toc-public-policy-and-government" class="nav-link" data-scroll-target="#public-policy-and-government">Public Policy and Government</a></li>
+  <li><a href="#business-and-marketing" id="toc-business-and-marketing" class="nav-link" data-scroll-target="#business-and-marketing">Business and Marketing</a></li>
+  <li><a href="#cross-domain-synthesis" id="toc-cross-domain-synthesis" class="nav-link" data-scroll-target="#cross-domain-synthesis">Cross-Domain Synthesis</a></li>
+  <li><a href="#emerging-trends" id="toc-emerging-trends" class="nav-link" data-scroll-target="#emerging-trends">Emerging Trends</a></li>
+  <li><a href="#research-gaps-and-limitations" id="toc-research-gaps-and-limitations" class="nav-link" data-scroll-target="#research-gaps-and-limitations">Research Gaps and Limitations</a></li>
+  <li><a href="#testable-hypothesis" id="toc-testable-hypothesis" class="nav-link" data-scroll-target="#testable-hypothesis">Testable Hypothesis</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  <li><a href="#step-5-reflection" id="toc-step-5-reflection" class="nav-link" data-scroll-target="#step-5-reflection">Step 5: Reflection</a>
+  <ul class="collapse">
+  <li><a href="#how-did-each-model-approach-the-systematic-review-differently" id="toc-how-did-each-model-approach-the-systematic-review-differently" class="nav-link" data-scroll-target="#how-did-each-model-approach-the-systematic-review-differently">How did each model approach the systematic review differently?</a></li>
+  <li><a href="#which-prompt-refinements-yielded-the-best-results" id="toc-which-prompt-refinements-yielded-the-best-results" class="nav-link" data-scroll-target="#which-prompt-refinements-yielded-the-best-results">Which prompt refinements yielded the best results?</a></li>
+  <li><a href="#what-did-i-learn-about-using-ai-for-structured-academic-reviews" id="toc-what-did-i-learn-about-using-ai-for-structured-academic-reviews" class="nav-link" data-scroll-target="#what-did-i-learn-about-using-ai-for-structured-academic-reviews">What did I learn about using AI for structured academic reviews?</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Assignment 2: Prompt Exercise</h1>
+<p class="subtitle lead">Systematic Literature Review Using ChatGPT and Claude</p>
+</div>
+
+<div>
+  <div class="description">
+    Portfolio &amp; coursework in data visualization and analytics.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Tanmoy Biswas </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This assignment examines how two AI models can support the development of a structured literature review on data mining and machine learning applications. I compared two models: ChatGPT and Claude. Although the assignment prompt listed ChatGPT, Copilot, and Grok as examples, Dr.&nbsp;Ho clarified in class that students could use any two AI models. I selected ChatGPT and Claude because both are widely used for academic writing, structured reasoning, and research-oriented drafting.</p>
+<p>The goal of this exercise was not only to generate a review, but also to evaluate how each model handled academic structure, synthesis, trends, research gaps, testable hypotheses, and references.</p>
+</section>
+<section id="step-1-baseline-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-baseline-prompt">Step 1: Baseline Prompt</h2>
+<p>The same baseline prompt was submitted to both ChatGPT and Claude:</p>
+<blockquote class="blockquote">
+<p>Conduct a 2,000-word structured systematic literature review on the applications of data mining and machine learning in real-world domains.</p>
+<p>Please organize the review with the following sections:</p>
+<ol type="1">
+<li>Introduction<br>
+</li>
+<li>Review Methodology
+<ul>
+<li>Search strategy<br>
+</li>
+<li>Inclusion and exclusion criteria<br>
+</li>
+<li>Scope of the literature<br>
+</li>
+</ul></li>
+<li>Major Application Domains
+<ul>
+<li>Healthcare<br>
+</li>
+<li>Finance<br>
+</li>
+<li>Education<br>
+</li>
+<li>Public policy or government<br>
+</li>
+<li>Business and marketing<br>
+</li>
+</ul></li>
+<li>Synthesis of Key Findings<br>
+</li>
+<li>Emerging Trends<br>
+</li>
+<li>Research Gaps and Limitations<br>
+</li>
+<li>One Testable Hypothesis<br>
+</li>
+<li>Conclusion<br>
+</li>
+<li>References</li>
+</ol>
+<p>Use an academic tone suitable for a graduate-level knowledge mining course. Focus on synthesis rather than only listing examples. Include real scholarly references where possible. Do not fabricate citations. If any citation is uncertain, clearly mark it as needing verification.</p>
+</blockquote>
+</section>
+<section id="step-2-analysis-of-initial-model-responses" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-analysis-of-initial-model-responses">Step 2: Analysis of Initial Model Responses</h2>
+<p>The two models produced similar overall structures, but they differed in tone, depth, and academic polish.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Evaluation Criterion</th>
+<th>ChatGPT Response</th>
+<th>Claude Response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structure</td>
+<td>ChatGPT followed the requested structure clearly. It included an introduction, methodology, application domains, synthesis, trends, gaps, hypothesis, conclusion, and references.</td>
+<td>Claude also followed the requested structure, but used a more formal systematic-review style with clearer subsection organization.</td>
+</tr>
+<tr class="even">
+<td>Methodology</td>
+<td>ChatGPT described a structured review approach and referenced PRISMA-style reporting. However, the methodology read more like a simplified review design than a full systematic review.</td>
+<td>Claude provided a more detailed methodology, including databases, keyword families, inclusion criteria, exclusion criteria, and scope limitations.</td>
+</tr>
+<tr class="odd">
+<td>Synthesis</td>
+<td>ChatGPT synthesized across domains clearly and used accessible language to explain common patterns such as prediction, data quality, fairness, and interpretability.</td>
+<td>Claude provided stronger cross-domain synthesis, especially around data standardization, algorithmic bias, regulatory oversight, and power asymmetry.</td>
+</tr>
+<tr class="even">
+<td>Trends and Gaps</td>
+<td>ChatGPT identified useful trends such as explainable AI, human-in-the-loop systems, responsible AI governance, and unstructured data.</td>
+<td>Claude identified similar trends but framed them more academically, including federated learning, large language models, causal machine learning, and algorithmic auditing.</td>
+</tr>
+<tr class="odd">
+<td>Hypothesis</td>
+<td>ChatGPT proposed a relevant and testable hypothesis comparing interpretable human-in-the-loop models with black-box accuracy-focused models.</td>
+<td>Claude proposed a more specific hypothesis connecting regulatory oversight and data standards with lower demographic disparity.</td>
+</tr>
+<tr class="even">
+<td>References</td>
+<td>ChatGPT included many references and links, but some links appeared web-generated and would need cleaning before formal submission.</td>
+<td>Claude provided cleaner APA-style references with DOIs for several sources, but some citations were still marked as needing verification.</td>
+</tr>
+<tr class="odd">
+<td>Overall Assessment</td>
+<td>ChatGPT was clearer and more practical, but less polished as a formal literature review.</td>
+<td>Claude was more academically polished and better suited as the foundation for the final synthesized review.</td>
+</tr>
+</tbody>
+</table>
+<section id="summary-of-chatgpt-response" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-chatgpt-response">Summary of ChatGPT Response</h3>
+<p>ChatGPT’s response was useful because it explained the topic in clear and accessible language. It framed data mining and machine learning as socio-technical systems, not just technical tools. This was one of its strongest contributions. It also emphasized that model performance alone is not enough; real-world usefulness depends on interpretation, fairness, institutional context, and accountability.</p>
+<p>However, ChatGPT’s response was less formal than Claude’s. Some of the wording was conversational, and some references included links that would need to be cleaned or verified before a final academic submission. The response was strong for understanding the topic, but it needed refinement to sound more like a graduate-level literature review.</p>
+</section>
+<section id="summary-of-claude-response" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-claude-response">Summary of Claude Response</h3>
+<p>Claude’s response was more polished and academic. It gave a stronger explanation of why machine learning applications are more mature in some domains, such as healthcare and finance, than in others, such as education and public policy. Claude also provided stronger cross-domain synthesis, especially around data standardization, algorithmic bias, regulatory oversight, and power asymmetry.</p>
+<p>The main weakness of Claude’s response was that some citations were still marked as needing verification. Also, the writing sometimes sounded very confident, so the claims needed to be reviewed carefully to avoid overstatement.</p>
+</section>
+</section>
+<section id="step-3-refined-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-refined-prompts">Step 3: Refined Prompts</h2>
+<p>After reviewing the initial responses, I created refined prompts for each model.</p>
+<section id="refined-prompt-for-chatgpt" class="level3">
+<h3 class="anchored" data-anchor-id="refined-prompt-for-chatgpt">Refined Prompt for ChatGPT</h3>
+<blockquote class="blockquote">
+<p>Revise the previous systematic literature review on data mining and machine learning applications to make it more academically rigorous and less conversational.</p>
+<p>Please improve the response in the following ways:</p>
+<ol type="1">
+<li>Strengthen the methodology section by clearly distinguishing this as a structured review rather than a full PRISMA systematic review.</li>
+<li>Improve cross-domain synthesis instead of only describing each domain separately.</li>
+<li>Use more precise academic language.</li>
+<li>Keep the five domains: healthcare, finance, education, public policy/government, and business/marketing.</li>
+<li>Strengthen the research gaps section by focusing on implementation evidence, fairness auditing, external validity, and longitudinal evaluation.</li>
+<li>Keep one testable hypothesis, but make it more specific and measurable.</li>
+<li>Remove casual phrases and unsupported claims.</li>
+<li>Include only references that are likely to be real and verifiable. If uncertain, mark the reference as needing verification.</li>
+</ol>
+</blockquote>
+</section>
+<section id="refined-prompt-for-claude" class="level3">
+<h3 class="anchored" data-anchor-id="refined-prompt-for-claude">Refined Prompt for Claude</h3>
+<blockquote class="blockquote">
+<p>Revise the previous systematic literature review on data mining and machine learning applications with greater attention to source verification, methodological caution, and concise academic writing.</p>
+<p>Please improve the response in the following ways:</p>
+<ol type="1">
+<li>Clearly state that the review follows a structured review style but is not a full PRISMA-compliant systematic review.</li>
+<li>Keep the academic tone but reduce overstatement.</li>
+<li>Strengthen the comparison between domains by explaining why healthcare and finance appear more mature than education and public policy.</li>
+<li>Keep the discussion of algorithmic bias, interpretability, fairness auditing, and regulatory oversight.</li>
+<li>Remove or replace citations that are uncertain unless they are clearly marked as needing verification.</li>
+<li>Make the testable hypothesis practical enough for a graduate-level empirical research design.</li>
+<li>Provide a concise final review suitable for a course assignment.</li>
+</ol>
+</blockquote>
+</section>
+</section>
+<section id="step-4-final-synthesized-systematic-literature-review" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-final-synthesized-systematic-literature-review">Step 4: Final Synthesized Systematic Literature Review</h2>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">Introduction</h3>
+<p>Data mining and machine learning have become major tools for extracting useful patterns from large and complex datasets. In the knowledge discovery tradition, data mining refers to the process of identifying valid, novel, useful, and understandable patterns in data. Machine learning extends this process by using algorithms that can learn predictive or classificatory patterns from data. Together, these methods are now used in healthcare, finance, education, public policy, government administration, business, and marketing.</p>
+<p>The main value of data mining and machine learning is not simply that they can process large datasets quickly. Their real value comes from their ability to support prediction, classification, clustering, anomaly detection, recommendation, and decision support. However, the literature also shows that machine learning is not automatically beneficial. The quality of the data, the fairness of the model, the interpretability of the results, and the institutional setting all influence whether these tools produce useful or harmful outcomes.</p>
+<p>This review synthesizes major applications of data mining and machine learning across five domains: healthcare, finance, education, public policy/government, and business/marketing. The review focuses on cross-domain patterns rather than only listing examples from each field.</p>
+</section>
+<section id="methodology" class="level3">
+<h3 class="anchored" data-anchor-id="methodology">Methodology</h3>
+<p>This review follows a structured literature review style, but it is not a full PRISMA-compliant systematic review. The purpose was to identify major themes, applications, trends, and gaps in the literature on data mining and machine learning applications.</p>
+<p>The review focused on peer-reviewed and widely cited literature related to machine learning, data mining, predictive modeling, classification, clustering, recommendation systems, fraud detection, educational data mining, public-sector algorithms, and healthcare analytics. The main domains were selected because they represent common real-world settings where data mining and machine learning are used for decision-making.</p>
+<p>The inclusion criteria focused on studies and reviews that discussed real-world applications, methodological issues, ethical challenges, or cross-domain implications. Purely technical studies without real-world application context were less central to the review. The review also prioritized sources that helped explain broader issues such as bias, interpretability, fairness, accountability, and implementation.</p>
+</section>
+<section id="healthcare" class="level3">
+<h3 class="anchored" data-anchor-id="healthcare">Healthcare</h3>
+<p>Healthcare is one of the most important domains for machine learning because decisions can directly affect patient well-being. Applications include disease prediction, medical imaging, hospital readmission prediction, patient risk scoring, personalized medicine, drug discovery, and public-health surveillance.</p>
+<p>Machine learning has shown strong performance in medical imaging and clinical prediction. For example, deep learning models have been used to classify skin cancer images and detect pneumonia from chest X-rays. Healthcare data are often rich and complex, including electronic health records, clinical notes, laboratory results, medical images, and insurance claims. These data sources make healthcare a promising domain for predictive modeling.</p>
+<p>However, healthcare also illustrates the risks of algorithmic bias. A model can be accurate in a technical sense while still producing unfair outcomes if the target variable reflects structural inequality. For example, if healthcare cost is used as a proxy for medical need, the model may underestimate the needs of groups that historically had less access to care. This shows that model design requires careful thinking about what the outcome variable actually measures.</p>
+<p>Healthcare also has stronger regulatory and validation expectations than many other domains. Because errors can have serious consequences, models often require clinical validation, transparency, and post-deployment monitoring. This makes healthcare a relatively mature domain for machine learning, but also one where implementation is slower and more cautious.</p>
+</section>
+<section id="finance" class="level3">
+<h3 class="anchored" data-anchor-id="finance">Finance</h3>
+<p>Finance has a long history of quantitative modeling, so machine learning fits naturally into many financial tasks. Common applications include credit scoring, fraud detection, anti-money-laundering monitoring, algorithmic trading, insurance underwriting, customer segmentation, and risk management.</p>
+<p>Fraud detection is one of the strongest use cases. Financial institutions process massive numbers of transactions, and fraudulent cases are rare compared with legitimate transactions. This creates a class imbalance problem, where ordinary accuracy is not enough. Metrics such as precision, recall, F1-score, and cost-sensitive evaluation are more useful because the cost of missing fraud can be high.</p>
+<p>Credit scoring is another major application, but it raises fairness and interpretability concerns. If historical lending data reflect unequal access to credit, machine learning models may reproduce those inequalities. Financial institutions also face regulatory pressure to explain credit decisions. This creates a tension between using complex models for predictive accuracy and using interpretable models for accountability.</p>
+<p>Overall, finance is a mature domain because it has structured data, clear business objectives, and strong incentives for prediction. At the same time, it requires careful governance because financial decisions can affect access to loans, insurance, and economic opportunity.</p>
+</section>
+<section id="education" class="level3">
+<h3 class="anchored" data-anchor-id="education">Education</h3>
+<p>Educational data mining and learning analytics use data from schools, universities, online platforms, and learning management systems. Applications include student performance prediction, dropout risk modeling, learner behavior clustering, adaptive learning, recommendation systems, and analysis of discussion posts or written assignments.</p>
+<p>The main promise of machine learning in education is early intervention. If a model can identify students at risk of failing or withdrawing, institutions may be able to provide tutoring, advising, or other support before the student falls too far behind. Learning management systems also generate detailed behavioral data, such as login frequency, assignment submission timing, quiz performance, and participation patterns.</p>
+<p>However, education is more difficult than finance or healthcare because the target outcome is often contested. Grades, GPA, and course completion are commonly used as indicators of learning, but they are imperfect proxies. They may reflect socioeconomic background, prior preparation, language barriers, or institutional grading practices rather than learning alone.</p>
+<p>There is also a risk that predictive models may label students in harmful ways. If a student is classified as “high risk” but the institution does not provide meaningful support, the model may stigmatize rather than help. For this reason, educational machine learning should be connected to ethical intervention, not just prediction.</p>
+</section>
+<section id="public-policy-and-government" class="level3">
+<h3 class="anchored" data-anchor-id="public-policy-and-government">Public Policy and Government</h3>
+<p>Machine learning in public policy and government includes predictive policing, child welfare screening, tax compliance, benefits fraud detection, public health surveillance, disaster response, transportation planning, and analysis of public comments or administrative documents.</p>
+<p>This is one of the most ethically sensitive domains because government decisions can directly affect rights, benefits, policing, family life, and access to public services. A private recommendation system may influence what someone buys, but a government algorithm may influence whether someone is investigated, denied benefits, or classified as risky.</p>
+<p>The major challenge in government machine learning is that the data often come from institutional processes that may already be biased. For example, crime data may reflect policing patterns rather than actual crime patterns. If a predictive policing model is trained on arrest data, it may send more police to areas that were already heavily policed, creating a feedback loop.</p>
+<p>Government applications also raise concerns about transparency and contestability. People affected by algorithmic decisions may not know that an algorithm was used, may not understand how the decision was made, and may not have a clear way to appeal. Therefore, public-sector machine learning requires stronger accountability mechanisms than many private-sector applications.</p>
+</section>
+<section id="business-and-marketing" class="level3">
+<h3 class="anchored" data-anchor-id="business-and-marketing">Business and Marketing</h3>
+<p>Business and marketing were early adopters of data mining because firms collect large amounts of customer and transaction data. Applications include customer segmentation, churn prediction, recommendation systems, market-basket analysis, dynamic pricing, sentiment analysis, targeted advertising, and customer relationship management.</p>
+<p>The strongest business use case is personalization. Companies use machine learning to recommend products, predict customer preferences, identify customers likely to leave, and tailor promotions. Recommendation systems used by companies such as Amazon, Netflix, and Spotify are well-known examples of machine learning in commercial settings.</p>
+<p>However, marketing analytics also raises concerns about privacy and manipulation. Firms can infer sensitive characteristics from customer behavior, even when customers did not directly provide that information. A model that predicts what a customer wants can also be used to exploit behavioral vulnerabilities. This means the ethical issue is not only whether the prediction is accurate, but how the prediction is used.</p>
+<p>Compared with healthcare and finance, business and marketing often face fewer regulatory constraints. This allows faster deployment, but it also means there may be less independent auditing and accountability.</p>
+</section>
+<section id="cross-domain-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="cross-domain-synthesis">Cross-Domain Synthesis</h3>
+<p>Across the five domains, several patterns appear.</p>
+<p>First, machine learning applications are more mature where data are abundant, standardized, and continuously generated. Finance and marketing benefit from structured transaction data. Healthcare benefits from electronic health records and medical imaging, although privacy and regulation create additional complexity. Education and government often have more fragmented and context-dependent data.</p>
+<p>Second, prediction dominates most applications. Across domains, organizations use machine learning to predict risk, identify anomalies, classify cases, recommend actions, and prioritize interventions. However, prediction alone is not enough. A model must be connected to a meaningful action. Otherwise, prediction becomes an academic exercise rather than a useful decision-support tool.</p>
+<p>Third, fairness and bias are recurring problems. Machine learning models learn from historical data, and historical data often reflect unequal social conditions. This means that bias is not limited to one domain. It appears in healthcare, finance, education, public policy, and marketing.</p>
+<p>Fourth, interpretability becomes more important when decisions are high-stakes. In domains such as healthcare, finance, and government, affected individuals need explanations and appeal mechanisms. Black-box models may be powerful, but they can be difficult to justify when they influence major life outcomes.</p>
+<p>Fifth, many studies still focus more on model performance than real-world impact. High accuracy, AUC, or F1-score does not prove that a model improves decisions after deployment. More longitudinal evaluation is needed to study whether machine learning systems actually improve outcomes over time.</p>
+</section>
+<section id="emerging-trends" class="level3">
+<h3 class="anchored" data-anchor-id="emerging-trends">Emerging Trends</h3>
+<p>Several trends are shaping the future of data mining and machine learning applications.</p>
+<p>One major trend is explainable and interpretable machine learning. As models are used in high-stakes domains, users and regulators increasingly demand explanations. In some cases, simpler interpretable models may be preferable to complex black-box models.</p>
+<p>A second trend is human-in-the-loop machine learning. Rather than fully automating decisions, many organizations use machine learning to support human judgment. This is especially important in medicine, fraud investigation, education advising, and public administration.</p>
+<p>A third trend is responsible AI governance. Organizations are beginning to pay more attention to fairness audits, model documentation, data provenance, privacy, and monitoring for model drift.</p>
+<p>A fourth trend is the use of unstructured data. Text, images, audio, social media, clinical notes, and administrative records are increasingly analyzed with machine learning. This expands the power of data mining but also creates new privacy and consent concerns.</p>
+<p>A fifth trend is causal machine learning. Traditional machine learning is strong at prediction, but many real-world decisions require understanding the likely effect of an intervention. Causal methods are therefore becoming more important in healthcare, education, and public policy.</p>
+</section>
+<section id="research-gaps-and-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="research-gaps-and-limitations">Research Gaps and Limitations</h3>
+<p>The first major research gap is implementation evidence. Many studies show that a model can predict an outcome, but fewer show that the model improves decisions or outcomes after deployment.</p>
+<p>The second gap is fairness auditing. Many studies mention bias, but fewer conduct detailed subgroup analysis or fairness testing. This is a serious limitation in high-stakes domains.</p>
+<p>The third gap is external validity. Models trained in one institution, country, or time period may not generalize to another. This is especially important in healthcare and education, where populations and practices vary.</p>
+<p>The fourth gap is interpretability. Some studies use complex models and then add explanation tools, but they do not always test whether those explanations are useful to real decision-makers.</p>
+<p>The fifth gap is privacy. Healthcare, education, finance, and government all involve sensitive data. However, many studies treat data availability as a technical issue rather than an ethical and governance issue.</p>
+</section>
+<section id="testable-hypothesis" class="level3">
+<h3 class="anchored" data-anchor-id="testable-hypothesis">Testable Hypothesis</h3>
+<p>Based on this review, the following hypothesis is proposed:</p>
+<p><strong>H1: In high-stakes domains, machine learning systems that combine interpretable models with structured human review will produce lower subgroup error disparities and higher user trust than black-box models optimized only for predictive accuracy.</strong></p>
+<p>This hypothesis could be tested in domains such as student-risk prediction, fraud detection, or clinical triage. Researchers could compare two deployment conditions: one using a black-box model and one using an interpretable model with human review. Outcomes could include predictive performance, subgroup error rates, decision consistency, user trust, intervention uptake, and downstream outcome improvement.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Data mining and machine learning have become powerful tools for extracting patterns from large and complex datasets. They support prediction, classification, clustering, anomaly detection, recommendation, and decision-making across healthcare, finance, education, government, and business.</p>
+<p>However, the main lesson from the literature is that machine learning is not automatically beneficial. Its value depends on the quality of the data, the design of the model, the fairness of the outcome, the interpretability of the results, and the accountability of the institution using it. The strongest applications are not simply those with the highest accuracy, but those that connect prediction to responsible action.</p>
+<p>The future of applied machine learning should therefore focus not only on better algorithms, but also on better governance, fairness auditing, longitudinal evaluation, and human-centered implementation.</p>
+</section>
+</section>
+<section id="step-5-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-reflection">Step 5: Reflection</h2>
+<section id="how-did-each-model-approach-the-systematic-review-differently" class="level3">
+<h3 class="anchored" data-anchor-id="how-did-each-model-approach-the-systematic-review-differently">How did each model approach the systematic review differently?</h3>
+<p>ChatGPT approached the review in a clearer and more explanatory way. Its response was easier to read and was useful for understanding the major issues in simple language. It emphasized that machine learning should be understood as part of a socio-technical system, which was helpful for framing the topic.</p>
+<p>Claude approached the review in a more formal academic style. Its response sounded more like a graduate-level literature review. It gave stronger cross-domain synthesis and explained the role of data standardization, regulatory oversight, algorithmic bias, and power asymmetry more effectively.</p>
+<p>Overall, ChatGPT was stronger for clarity and practical explanation, while Claude was stronger for academic tone and synthesis.</p>
+</section>
+<section id="which-prompt-refinements-yielded-the-best-results" class="level3">
+<h3 class="anchored" data-anchor-id="which-prompt-refinements-yielded-the-best-results">Which prompt refinements yielded the best results?</h3>
+<p>The most useful refinements were the instructions to improve cross-domain synthesis, avoid simple domain-by-domain description, reduce overstatement, and distinguish a structured review from a full PRISMA-compliant systematic review. These refinements improved the academic precision of the output.</p>
+<p>For ChatGPT, the most useful refinement was asking it to become less conversational and more academically rigorous. For Claude, the most useful refinement was asking it to reduce overstatement and pay closer attention to citation verification.</p>
+</section>
+<section id="what-did-i-learn-about-using-ai-for-structured-academic-reviews" class="level3">
+<h3 class="anchored" data-anchor-id="what-did-i-learn-about-using-ai-for-structured-academic-reviews">What did I learn about using AI for structured academic reviews?</h3>
+<p>This exercise showed me that AI can be very useful for organizing a literature review, identifying themes, drafting comparisons, and developing hypotheses. However, it also showed that AI outputs must be checked carefully. A well-written response can still include uncertain citations, overconfident claims, or simplified methodology.</p>
+<p>I learned that AI works best when it is used as a drafting and thinking partner rather than as a final authority. The student still has to judge the quality of the structure, verify sources, refine the argument, and make sure the final submission is accurate and appropriate for the assignment.</p>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Adomavicius, G., &amp; Tuzhilin, A. (2005). Toward the next generation of recommender systems: A survey of the state-of-the-art and possible extensions. <em>IEEE Transactions on Knowledge and Data Engineering, 17</em>(6), 734–749.</p>
+<p>Breiman, L. (2001). Random forests. <em>Machine Learning, 45</em>(1), 5–32.</p>
+<p>Chen, T., &amp; Guestrin, C. (2016). XGBoost: A scalable tree boosting system. <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining</em>.</p>
+<p>Fayyad, U., Piatetsky-Shapiro, G., &amp; Smyth, P. (1996). From data mining to knowledge discovery in databases. <em>AI Magazine, 17</em>(3), 37–54.</p>
+<p>LeCun, Y., Bengio, Y., &amp; Hinton, G. (2015). Deep learning. <em>Nature, 521</em>(7553), 436–444.</p>
+<p>Lum, K., &amp; Isaac, W. (2016). To predict and serve? <em>Significance, 13</em>(5), 14–19.</p>
+<p>Ngai, E. W. T., Xiu, L., &amp; Chau, D. C. K. (2009). Application of data mining techniques in customer relationship management: A literature review and classification. <em>Expert Systems with Applications, 36</em>(2), 2592–2602.</p>
+<p>Obermeyer, Z., Powers, B., Vogeli, C., &amp; Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. <em>Science, 366</em>(6464), 447–453.</p>
+<p>Page, M. J., McKenzie, J. E., Bossuyt, P. M., et al.&nbsp;(2021). The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. <em>BMJ, 372</em>, n71.</p>
+<p>Rudin, C. (2019). Stop explaining black box machine learning models for high-stakes decisions and use interpretable models instead. <em>Nature Machine Intelligence, 1</em>, 206–215.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/Tanmoy-data-science\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 Tanmoy Biswas</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

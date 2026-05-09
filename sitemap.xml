@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://Tanmoy-data-science.github.io/assignments/knowledge-mining/assignment04/assignment04.html</loc>
+    <lastmod>2026-05-09T09:50:13.462Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Tanmoy-data-science.github.io/assignments/knowledge-mining/assignment02/assignment02.html</loc>
+    <lastmod>2026-05-09T08:03:48.694Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Tanmoy-data-science.github.io/cv/index.html</loc>
+    <lastmod>2025-09-04T07:18:48.649Z</lastmod>
+  </url>
+  <url>
     <loc>https://Tanmoy-data-science.github.io/index.html</loc>
-    <lastmod>2025-09-04T06:55:45.633Z</lastmod>
+    <lastmod>2026-05-09T07:39:20.823Z</lastmod>
   </url>
   <url>
     <loc>https://Tanmoy-data-science.github.io/about.html</loc>
     <lastmod>2025-09-04T00:46:23.395Z</lastmod>
   </url>
   <url>
-    <loc>https://Tanmoy-data-science.github.io/cv/index.html</loc>
-    <lastmod>2025-09-04T07:18:48.649Z</lastmod>
+    <loc>https://Tanmoy-data-science.github.io/assignments/knowledge-mining/index.html</loc>
+    <lastmod>2026-05-09T09:52:17.903Z</lastmod>
+  </url>
+  <url>
+    <loc>https://Tanmoy-data-science.github.io/assignments/knowledge-mining/assignment03/assignment03.html</loc>
+    <lastmod>2026-05-09T08:57:10.313Z</lastmod>
   </url>
 </urlset>
